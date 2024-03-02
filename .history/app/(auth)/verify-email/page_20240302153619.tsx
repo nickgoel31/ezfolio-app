@@ -30,7 +30,7 @@ const VerifyEmailPage = () => {
             try {
                 updateEmailVerified(emailVerificationTokenFromDB.userEmail, emailVerificationTokenFromDB.token).then((response) => {
                     setSuccess(response?.success);
-                    setError(response?.error);
+                setError(response?.error);
                 })
                 
             } catch (error) {
