@@ -13,7 +13,7 @@ const ImageUpload = ({pagePicUrl}:{pagePicUrl:string | null | undefined}) => {
 
     useEffect(() => {
         uploadImageOfUserById(user,imageUrl)
-    },[imageUrl,user])
+    },[imageUrl])
 
   return (
     <div className="w-full">
