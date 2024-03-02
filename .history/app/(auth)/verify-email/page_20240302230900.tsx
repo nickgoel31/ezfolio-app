@@ -22,7 +22,7 @@ const VerifyEmailPage = () => {
             const emailVerificationTokenFromDB = await getEmailVerificationTokenByToken(verificationToken);
 
             if (!emailVerificationTokenFromDB) {
-                redirect("/login")
+                return;
             }
 
             try {

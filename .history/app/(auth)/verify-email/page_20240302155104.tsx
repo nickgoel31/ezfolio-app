@@ -1,10 +1,12 @@
 "use client"
 
 import { updateEmailVerified } from "@/actions/user/update-user-password";
-import { getEmailVerificationTokenByToken } from "@/helpers/get-email-verification";
+import { checkEmailVerificationToken } from "@/helpers/check";
+import { getEmailVerificationTokenByEmail, getEmailVerificationTokenByToken } from "@/helpers/get-email-verification";
+import { useEmailVerificationToken } from "@/hooks/useEmailVerificationToken";
 import { redirect, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import { ThreeDots } from "react-loader-spinner";
+import { DNA, InfinitySpin, ThreeDots } from "react-loader-spinner";
 
 const VerifyEmailPage = () => {
     const [success, setSuccess] = useState<string | undefined>();
@@ -22,7 +24,7 @@ const VerifyEmailPage = () => {
             const emailVerificationTokenFromDB = await getEmailVerificationTokenByToken(verificationToken);
 
             if (!emailVerificationTokenFromDB) {
-                redirect("/login")
+                return;
             }
 
             try {

@@ -1,13 +1,12 @@
 "use server"
 
-import { cookies } from "next/headers"
-
+import cookies from "js-cookie"
 
 var authCookie = "devlinker_session"
 
 export const setCookieInHeader = async (sessionId:string) => {
     try {
-        cookies().set(authCookie, sessionId, {
+        cookies.set(authCookie, sessionId, {
             maxAge:   60 * 60 * 24 * 30,// one day in seconds
             httpOnly:true,
             secure:true,
@@ -19,7 +18,7 @@ export const setCookieInHeader = async (sessionId:string) => {
 
 export const removeCookieFromHeader = async () => {
     try {
-        cookies().delete(authCookie)
+        cookies.remove(authCookie)
     } catch (error) {
         console.log(error)
     }
@@ -27,7 +26,7 @@ export const removeCookieFromHeader = async () => {
 
 export const getCookieFromHeader = () => {
     try {
-        const cookie = cookies().get(authCookie)
+        const cookie = cookies.get(authCookie)
         return cookie;
     } catch (error) {
         console.log(error)
