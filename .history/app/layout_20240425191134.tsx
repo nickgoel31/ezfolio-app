@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   description: "Created by ♥ for developers.",
   applicationName:"Ezfolio"
 };
-
 export const dynamic = 'force-dynamic'
 
 export default function RootLayout({

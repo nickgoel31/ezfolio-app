@@ -1,5 +1,3 @@
-"use client"
-
 import React, { Suspense, useState, useEffect } from 'react';
 import { updateEmailVerified } from "@/actions/user/update-user-password";
 import { getEmailVerificationTokenByToken } from "@/helpers/get-email-verification";

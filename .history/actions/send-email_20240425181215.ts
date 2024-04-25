@@ -23,7 +23,7 @@ export const sendPasswordResetEmail = async (email:string,token:string) => {
                 address: process.env.EMAIL_USER || "thewalkingjumbo@gmail.com",
             },
             to: `${email}`,
-            subject: "Password Reset Link | Ezfolio",
+            subject: "Password Reset Link | DevLinker",
             text: `Below is the password reset link for your account in DevLinker`,
             html: `
                 <div>

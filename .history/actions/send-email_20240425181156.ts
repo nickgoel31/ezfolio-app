@@ -23,7 +23,7 @@ export const sendPasswordResetEmail = async (email:string,token:string) => {
                 address: process.env.EMAIL_USER || "thewalkingjumbo@gmail.com",
             },
             to: `${email}`,
-            subject: "Password Reset Link | Ezfolio",
+            subject: "Password Reset Link | DevLinker",
             text: `Below is the password reset link for your account in DevLinker`,
             html: `
                 <div>
@@ -46,10 +46,10 @@ export const sendEmailVerificationEmailNodemailer = async (email:string,token:st
         await transporter.sendMail({
             from:{
                 name: "Ezfolio Support",
-                address: process.env.EMAIL_USER || "thewalkingjumbo@gmail.com",
+                address: process.env.EMAIL_USER || "support@ezfolio.social",
             },
             to: `${email}`,
-            subject: "Email Verification Link | Ezfolio",
+            subject: "Email Verification Link | DevLinker",
             text: `Below is the email verification link for your account in DevLinker`,
             html: `
                 <a href='http://localhost:3000/verify-email?email_verify_token=${token}'>Click here</a>

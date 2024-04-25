@@ -1,6 +1,6 @@
 "use client"
 import { redirect, useSearchParams } from 'next/navigation'
-import React, { Suspense, useState } from 'react'
+import React, { useState } from 'react'
 import { useDeletePasswordResetToken, usePasswordResetToken } from '@/hooks/usePasswordResetToken'
 import { deletePasswordResetTokenByToken } from '@/actions/auth/password-reset'
 import {InfinitySpin, RotatingSquare} from 'react-loader-spinner'
@@ -18,7 +18,7 @@ const ResetPassword = () => {
     if(!token) {
         return (
             <div className='flex w-full h-full items-center justify-center'>
-                <Suspense fallback={<InfinitySpin />}>
+                
                     <div className='hidden dark:block'>
                         <InfinitySpin
                         
@@ -35,7 +35,6 @@ const ResetPassword = () => {
                     
                         />
                     </div>
-                </Suspense>
             </div>
         )
     }
