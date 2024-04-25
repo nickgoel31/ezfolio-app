@@ -20,7 +20,6 @@ import { login } from "@/actions/auth/login"
 import Link from "next/link"
 import { useState } from "react"
 import { AlertTriangle, CheckCircle2 } from "lucide-react"
-import { redirect } from "next/navigation"
 
 
 
@@ -44,9 +43,7 @@ export default function LoginForm() {
     login(values).then(d => {
       setError(d?.error)
       setSuccess(d?.success)
-      if(d?.success) {
-        redirect("/d")
-      }
+      
     })
   }
 

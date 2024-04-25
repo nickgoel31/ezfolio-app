@@ -245,8 +245,6 @@ const OnBoardingForm = ({username}:{username:string}) => {
                     </div>
                 </div>
 
-                
-
 
             <div className="flex w-full gap-3 items-center">
                     <Button onClick={() => {

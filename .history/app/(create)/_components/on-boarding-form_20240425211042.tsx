@@ -198,7 +198,7 @@ const OnBoardingForm = ({username}:{username:string}) => {
             </div>
         )}
 
-        {isSecondSection && (
+        {/* {isSecondSection && (
             <div className="w-full space-y-4">
                 <div className="space-y-2">
                     <Label>Projects</Label>
@@ -261,7 +261,7 @@ const OnBoardingForm = ({username}:{username:string}) => {
                     <Button type="submit" disabled={!isFormValid} className="w-full">Submit</Button>
                 </div>
             </div>
-        )}
+        )} */}
 
         {/* {isThirdSection && (
             <div className="w-full space-y-4">

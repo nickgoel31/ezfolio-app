@@ -57,18 +57,6 @@ const OnBoardingForm = ({username}:{username:string}) => {
     // },[imageUrl])
 
 
-    function handleAddProject () {
-        const newProject:ProjectStateType = {
-            title: projectTitle,
-            desc: projectDesc,
-            url: projectUrl
-        }
-        setProjects((prevProjects) => [...prevProjects, newProject])
-    }
-    function handleDeleteProject (title:string) {
-        const filteredProjects:ProjectStateType[] = projects.filter(project => project.title !== title )
-        setProjects(filteredProjects)
-    }
 
     const router = useRouter()
 
@@ -191,77 +179,11 @@ const OnBoardingForm = ({username}:{username:string}) => {
                         
                     }} type="button" className="w-full flex-[0.5]" variant={"secondary"}>Prev</Button> */}
 
-                    <Button type="button" onClick={() => {
-                        setIsFirstSection(false)
-                        setIsSecondSection(true)}} className="w-full">Next</Button>
+                <Button type="submit" disabled={!isFormValid} className="w-full">Submit</Button>
                 </div>
             </div>
         )}
 
-        {isSecondSection && (
-            <div className="w-full space-y-4">
-                <div className="space-y-2">
-                    <Label>Projects</Label>
-                    <div className="flex items-center gap-2">
-                        
-                        {projects.map((project,index) => (
-                            <div key={index} className="p-3 px-4 border rounded cursor-pointer hover:bg-foreground/10 transition font-medium text-sm flex items-center gap-4">
-                                {project.title}
-                                <div onClick={() => handleDeleteProject(project.title)} className="p-1 rounded-full hover:bg-red-400/10 transition">
-                                    <Trash2 size={16} className="text-red-500"/>
-                                </div>
-                            </div>
-                        ))}
-
-
-                        <Dialog>
-                            <DialogTrigger>
-                                <div className="p-3 border rounded cursor-pointer hover:bg-foreground/10 transition">
-                                    <h5 className="font-medium text-sm">+ Add Projects</h5>
-                                </div>
-                            </DialogTrigger>
-
-                            <DialogContent>
-                                <DialogHeader>
-                                    <DialogTitle>Add a project to your linkIn</DialogTitle>
-                                    <DialogDescription>
-                                        Tell the world what you&apos;ve been working on!
-                                    </DialogDescription>
-                                </DialogHeader>
-
-                                <form className="space-y-3">
-                                    <Input placeholder="Project Title" className="bg-foreground/10" onChange={(e) => setprojectTitle(e.target.value)}/>
-                                    <Textarea placeholder="Project Description" className="bg-foreground/10 max-h-40"  onChange={(e) => setprojectDesc(e.target.value)}/>
-                                    <Input placeholder="Project Url (optional)" className="bg-foreground/10"  onChange={(e) => setprojectUrl(e.target.value)}/>
-
-                                    <div className="flex w-full items-center justify-end">
-                                        <DialogClose>
-                                            <Button type="button" onClick={handleAddProject}>Add</Button>
-                                        </DialogClose>
-                                    </div>
-                                </form>
-                            </DialogContent>
-                        </Dialog>
-                    </div>
-                </div>
-
-                
-
-
-            <div className="flex w-full gap-3 items-center">
-                    <Button onClick={() => {
-                        setIsFirstSection(true)
-                        setIsSecondSection(false)
-                    }} type="button" className="w-full flex-[0.5]" variant={"secondary"}>Prev</Button>
-
-                    {/* <Button type="button" onClick={() => {
-                        setIsFirstSection(false)
-                        setIsSecondSection(false)
-                        setIsThirdSection(true)}} className="w-full">Next</Button> */}
-                    <Button type="submit" disabled={!isFormValid} className="w-full">Submit</Button>
-                </div>
-            </div>
-        )}
 
         {/* {isThirdSection && (
             <div className="w-full space-y-4">

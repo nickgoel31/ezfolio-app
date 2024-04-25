@@ -98,7 +98,7 @@ const UserPage = async ({params}:{params:{username:string}}) => {
 
       </div>
 
-      <Link href={"https://ezfolio.social/s"} target='_blank' className='text-center font-medium pt-8 pb-14' style={{color:`${colorScheme.fgColor}`}}>
+      <Link href={"http://localhost:3000/showcase"} target='_blank' className='text-center font-medium pt-8 pb-14' style={{color:`${colorScheme.fgColor}`}}>
         <span className='opacity-70 text-xs uppercase'>Powered by&nbsp;</span><span className='text-lg font-semibold'>{process.env.APP_NAME}</span>
       </Link>
     </div>

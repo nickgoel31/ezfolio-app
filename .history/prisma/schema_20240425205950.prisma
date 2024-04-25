@@ -80,7 +80,7 @@ model ColorScheme {
 }
 
 model PageFont {
-  id       Int        @id @default(sequence())
+  id       Int        @id @default(autoincrement())
   family   String
   UserPage UserPage[]
 }

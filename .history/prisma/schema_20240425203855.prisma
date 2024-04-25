@@ -9,12 +9,12 @@ generator client {
 }
 
 datasource db {
-  provider = "cockroachdb"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id             String  @id @default(uuid())
+  id             String  @id @default(uuid()) 
   username       String  @unique
   email          String  @unique
   hashedPassword String
@@ -41,7 +41,7 @@ model UserPage {
   username     String    @unique
   pagePicUrl   String?
   title        String
-  bio          String    
+  bio          String    @db.Text
   projects     Project[]
   githubUrl    String?
   instagramUrl String?
@@ -63,7 +63,7 @@ model UserPage {
 }
 
 model ColorScheme {
-  id            Int     @id @default(sequence())
+  id            Int     @id @default(autoincrement())
   name          String  @unique
   firstBgColor  String
   secondBgColor String?
@@ -80,7 +80,7 @@ model ColorScheme {
 }
 
 model PageFont {
-  id       Int        @id @default(sequence())
+  id       Int        @id @default(autoincrement())
   family   String
   UserPage UserPage[]
 }

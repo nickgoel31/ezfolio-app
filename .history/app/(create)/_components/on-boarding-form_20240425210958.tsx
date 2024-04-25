@@ -263,7 +263,7 @@ const OnBoardingForm = ({username}:{username:string}) => {
             </div>
         )}
 
-        {/* {isThirdSection && (
+        {isThirdSection && (
             <div className="w-full space-y-4">
             <div className="space-y-2">
                 <Label>Experiences</Label>
@@ -323,7 +323,7 @@ const OnBoardingForm = ({username}:{username:string}) => {
                     setIsThirdSection(true)}} className="w-full">Next</Button>
             </div>
         </div>
-        )} */}
+        )}
       </form>
     </Form>
   )
