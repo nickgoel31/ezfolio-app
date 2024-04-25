@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-export const sendPasswordResetEmail = async (email:string, token:string) => {
+export const sendPasswordResetEmail = async (email:string, token) => {
     try {
         await transporter.sendMail({
             from: {
@@ -39,7 +39,7 @@ export const sendPasswordResetEmail = async (email:string, token:string) => {
     }
 };
 
-export const sendEmailVerificationEmailNodemailer = async (email:string, token:string) => {
+export const sendEmailVerificationEmailNodemailer = async (email, token) => {
     try {
         await transporter.sendMail({
             from: {
