@@ -68,7 +68,7 @@ const BasicInfo = ({username,pageTitle,pageBio,pagePicUrl}:Props) => {
 
             <div className='border shadow-sm rounded-xl p-5 bg-background w-full space-y-2'>
             
-            <div className='flex items-center justify-between w-full'>
+            <div>
                 <h4 className='text-xl font-medium'>Page Bio</h4>
                 {!editBioMode ? (
                                 <Edit onClick={() => setEditBioMode(!editBioMode)} className='cursor-pointer' size={18} />

@@ -10,10 +10,11 @@ const Footer = () => {
                 <p className='text-muted-foreground text-sm font-medium'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit a amet voluptas suscipit, offici.</p>
             </div>
             <div className='flex flex-row flex-wrap gap-7 font-medium text-sm'>
-                <Link href={"/s"} className='hover:text-violet-300 transition'>Home</Link>
-                <Link href={"/s#features"} className='hover:text-violet-300 transition'>Features</Link>
-                <Link href={"/s#pricing"} className='hover:text-violet-300 transition'>Pricing</Link>
-                <Link href={"/s/faqs"} className='hover:text-violet-300 transition'>What is Ezfolio?</Link>
+                <Link href={"/"} className='hover:text-violet-300 transition'>Home</Link>
+                <Link href={"/#features"} className='hover:text-violet-300 transition'>Features</Link>
+                <Link href={"/"} className='hover:text-violet-300 transition'>Pricing</Link>
+                <Link href={"/"} className='hover:text-violet-300 transition'>What is Ezfolio?</Link>
+                <Link href={"/"} className='hover:text-violet-300 transition'>Help Center</Link>
             </div>
         </div>
     </div>

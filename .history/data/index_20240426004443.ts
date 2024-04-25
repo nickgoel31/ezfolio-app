@@ -140,13 +140,13 @@ export const pricingList = [
 ]
 
 export const helpLinks = [
-    // {
-    //     label: "Documentation",
-    //     desc: "Documents describe how things should be done. They have a version history.",
-    //     url: "https://docs.ezfolio.social",
-    //     btnLabel: "Go to docs",
-    //     icon: BookOpenIcon
-    // },
+    {
+        label: "Documentation",
+        desc: "Documents describe how things should be done. They have a version history.",
+        url: "https://docs.ezfolio.social",
+        btnLabel: "Go to docs",
+        icon: BookOpenIcon
+    },
     {
         label: "FAQs",
         desc: "Browse through our frequently asked questions to get answer of most of your questions",
@@ -154,13 +154,13 @@ export const helpLinks = [
         btnLabel: "Go to FAQs",
         icon: HelpCircleIcon
     },
-    // {
-    //     label: "Community",
-    //     desc: "Get in touch with our support team for any queries or issues",
-    //     url: "https://www.discord.app",
-    //     btnLabel: "Join our community",
-    //     icon: FaDiscord
-    // }
+    {
+        label: "Community",
+        desc: "Get in touch with our support team for any queries or issues",
+        url: "https://www.discord.app",
+        btnLabel: "Join our community",
+        icon: FaDiscord
+    }
 ]
 
 
@@ -197,12 +197,12 @@ export const faqsList = [
     {
         id:3,
         question:"What is the cost of using Ezfolio?",
-        answer: "Ezfolio is free to use for everybody!",
+        answer: "Ezfolio is free to use for personal use. We also offer a pro plan with additional features.",
     },
     {
         id:4,
         question:"Can I use my own domain?",
-        answer: "Currently we are working on letting users connect their own domain! Stay tuned for updates.",
+        answer: "Yes, you can use your own domain with Ezfolio. You can also use a subdomain provided by Ezfolio.",
     },
     {
         id:5,
@@ -210,8 +210,18 @@ export const faqsList = [
         answer: "Yes, you can customize your portfolio. You can change the colors, fonts, layout and more.",
     },
     {
+        id:6,
+        question:"Can I add my own projects?",
+        answer: "Yes, you can add your own projects to your portfolio. You can add images, videos, links and more.",
+    },
+    {
         id:7,
         question:"How do I share my portfolio?",
         answer: "You can share your portfolio by sharing the link to your portfolio. You can also share it on social media.",
     },
+    {
+        id:8,
+        question:"Can I get help with my portfolio?",
+        answer: "Yes, you can get help with your portfolio. You can contact our support team for help.",
+    }
 ]

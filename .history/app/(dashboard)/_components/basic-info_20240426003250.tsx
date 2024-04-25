@@ -68,21 +68,20 @@ const BasicInfo = ({username,pageTitle,pageBio,pagePicUrl}:Props) => {
 
             <div className='border shadow-sm rounded-xl p-5 bg-background w-full space-y-2'>
             
-            <div className='flex items-center justify-between w-full'>
-                <h4 className='text-xl font-medium'>Page Bio</h4>
-                {!editBioMode ? (
-                                <Edit onClick={() => setEditBioMode(!editBioMode)} className='cursor-pointer' size={18} />
-                            ):(
-                                <Check onClick={handleUpdateBio} className='cursor-pointer' size={18} />
-                )}
-            </div>
+            <h4 className='text-xl font-medium'>Page Bio</h4>
             <div className='flex items-center gap-4 justify-between'>
                 {!editBioMode ? (
                     <p className='text-sm '>{pageBio}</p>
                 ):(
                     <Textarea className='max-h-32' defaultValue={pageBioState} onChange={(e) => setPageBioState(e.target.value)}/>
                 )}
-                
+                <div>
+                    {!editBioMode ? (
+                                <Edit onClick={() => setEditBioMode(!editBioMode)} className='cursor-pointer' size={18} />
+                            ):(
+                                <Check onClick={handleUpdateBio} className='cursor-pointer' size={18} />
+                    )}
+                </div>
             </div>
         </div>
         </div>

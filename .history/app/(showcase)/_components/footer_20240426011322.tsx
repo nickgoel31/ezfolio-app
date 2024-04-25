@@ -14,6 +14,7 @@ const Footer = () => {
                 <Link href={"/s#features"} className='hover:text-violet-300 transition'>Features</Link>
                 <Link href={"/s#pricing"} className='hover:text-violet-300 transition'>Pricing</Link>
                 <Link href={"/s/faqs"} className='hover:text-violet-300 transition'>What is Ezfolio?</Link>
+                <Link href={"/"} className='hover:text-violet-300 transition'>Help Center</Link>
             </div>
         </div>
     </div>

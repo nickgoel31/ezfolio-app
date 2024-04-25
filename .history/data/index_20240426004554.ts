@@ -140,13 +140,13 @@ export const pricingList = [
 ]
 
 export const helpLinks = [
-    // {
-    //     label: "Documentation",
-    //     desc: "Documents describe how things should be done. They have a version history.",
-    //     url: "https://docs.ezfolio.social",
-    //     btnLabel: "Go to docs",
-    //     icon: BookOpenIcon
-    // },
+    {
+        label: "Documentation",
+        desc: "Documents describe how things should be done. They have a version history.",
+        url: "https://docs.ezfolio.social",
+        btnLabel: "Go to docs",
+        icon: BookOpenIcon
+    },
     {
         label: "FAQs",
         desc: "Browse through our frequently asked questions to get answer of most of your questions",
@@ -154,13 +154,13 @@ export const helpLinks = [
         btnLabel: "Go to FAQs",
         icon: HelpCircleIcon
     },
-    // {
-    //     label: "Community",
-    //     desc: "Get in touch with our support team for any queries or issues",
-    //     url: "https://www.discord.app",
-    //     btnLabel: "Join our community",
-    //     icon: FaDiscord
-    // }
+    {
+        label: "Community",
+        desc: "Get in touch with our support team for any queries or issues",
+        url: "https://www.discord.app",
+        btnLabel: "Join our community",
+        icon: FaDiscord
+    }
 ]
 
 

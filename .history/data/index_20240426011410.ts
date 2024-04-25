@@ -154,13 +154,13 @@ export const helpLinks = [
         btnLabel: "Go to FAQs",
         icon: HelpCircleIcon
     },
-    // {
-    //     label: "Community",
-    //     desc: "Get in touch with our support team for any queries or issues",
-    //     url: "https://www.discord.app",
-    //     btnLabel: "Join our community",
-    //     icon: FaDiscord
-    // }
+    {
+        label: "Community",
+        desc: "Get in touch with our support team for any queries or issues",
+        url: "https://www.discord.app",
+        btnLabel: "Join our community",
+        icon: FaDiscord
+    }
 ]
 
 

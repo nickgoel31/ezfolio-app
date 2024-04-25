@@ -140,13 +140,13 @@ export const pricingList = [
 ]
 
 export const helpLinks = [
-    // {
-    //     label: "Documentation",
-    //     desc: "Documents describe how things should be done. They have a version history.",
-    //     url: "https://docs.ezfolio.social",
-    //     btnLabel: "Go to docs",
-    //     icon: BookOpenIcon
-    // },
+    {
+        label: "Documentation",
+        desc: "Documents describe how things should be done. They have a version history.",
+        url: "https://docs.ezfolio.social",
+        btnLabel: "Go to docs",
+        icon: BookOpenIcon
+    },
     {
         label: "FAQs",
         desc: "Browse through our frequently asked questions to get answer of most of your questions",
@@ -154,13 +154,13 @@ export const helpLinks = [
         btnLabel: "Go to FAQs",
         icon: HelpCircleIcon
     },
-    // {
-    //     label: "Community",
-    //     desc: "Get in touch with our support team for any queries or issues",
-    //     url: "https://www.discord.app",
-    //     btnLabel: "Join our community",
-    //     icon: FaDiscord
-    // }
+    {
+        label: "Community",
+        desc: "Get in touch with our support team for any queries or issues",
+        url: "https://www.discord.app",
+        btnLabel: "Join our community",
+        icon: FaDiscord
+    }
 ]
 
 
@@ -186,32 +186,6 @@ export const sectionsList = [
 export const faqsList = [
     {
         id:1,
-        question:"What is Ezfolio?",
-        answer: "Ezfolio is a platform that allows you to create a personal portfolio in minutes. It is designed to be simple, easy to use and customizable.",
-    },
-    {
-        id:2,
-        question:"How do I create a portfolio?",
-        answer: "Creating a portfolio is easy. Just sign up, fill in your details, add your projects and you are good to go.",
-    },
-    {
-        id:3,
-        question:"What is the cost of using Ezfolio?",
-        answer: "Ezfolio is free to use for everybody!",
-    },
-    {
-        id:4,
-        question:"Can I use my own domain?",
-        answer: "Currently we are working on letting users connect their own domain! Stay tuned for updates.",
-    },
-    {
-        id:5,
-        question:"Can I customize my portfolio?",
-        answer: "Yes, you can customize your portfolio. You can change the colors, fonts, layout and more.",
-    },
-    {
-        id:7,
-        question:"How do I share my portfolio?",
-        answer: "You can share your portfolio by sharing the link to your portfolio. You can also share it on social media.",
-    },
+        
+    }
 ]

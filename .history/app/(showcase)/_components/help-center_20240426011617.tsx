@@ -15,7 +15,7 @@ const HelpCenter = () => {
             </p>
         </div>
 
-        <div className='flex items-center justify-center max-w-screen-sm mx-auto  w-full gap-6 px-10 lg:px-0'>
+        <div className='flex items-center justify-center max-w-screen-sm mx-auto bg-red-500 w-full gap-6 px-10 lg:px-0'>
             {helpLinks.map((h,index) => {
                 const Icon:LucideIcon | IconType = h.icon;
                 return(
