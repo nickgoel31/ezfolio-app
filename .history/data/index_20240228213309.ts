@@ -1,1 +1,0 @@
-export const fontWeights = [500,600,700,800,900]
