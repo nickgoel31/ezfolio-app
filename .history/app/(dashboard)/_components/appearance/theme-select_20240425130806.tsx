@@ -1,5 +1,6 @@
 "use client"
 
+import { deleteAllColorSchemes, populateColorScheme } from '@/actions/colorscheme/populate-colorscheme'
 import { updateColorSchemeOnUserPage } from '@/actions/colorscheme/update-colorscheme'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -31,6 +32,9 @@ const ThemeSelect = ({schemes,currentScheme,userPageId}:Props) => {
         updateColorSchemeOnUserPage(colorSchemeState,userPageId)
     },[colorSchemeState,userPageId])
 
+    function handlePopulateThemes () {
+        populateColorScheme()
+    }
 
     function handleDeleteAllThemes () {
         // deleteAllColorSchemes()
@@ -41,6 +45,10 @@ const ThemeSelect = ({schemes,currentScheme,userPageId}:Props) => {
             <div className='flex items-center justify-between w-full'>
                 <h4 className='text-lg font-medium'>Themes</h4>
                
+                    <div className='flex items-center gap-3'>
+                        {(<Button variant={"outline"} onClick={handlePopulateThemes}>Populate Themes</Button>)}
+                        {/* <Button variant={"outline"} onClick={handleDeleteAllThemes}>Delete All Themes {`(testing)`}</Button> */}
+                    </div>
               
             </div>
             <div className='flex flex-row flex-wrap w-full gap-4'>

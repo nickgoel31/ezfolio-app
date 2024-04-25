@@ -41,6 +41,10 @@ const ThemeSelect = ({schemes,currentScheme,userPageId}:Props) => {
             <div className='flex items-center justify-between w-full'>
                 <h4 className='text-lg font-medium'>Themes</h4>
                
+                    <div className='flex items-center gap-3'>
+                        {(<Button variant={"outline"} onClick={handlePopulateThemes}>Populate Themes</Button>)}
+                        {/* <Button variant={"outline"} onClick={handleDeleteAllThemes}>Delete All Themes {`(testing)`}</Button> */}
+                    </div>
               
             </div>
             <div className='flex flex-row flex-wrap w-full gap-4'>
