@@ -1,0 +1,149 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String  @id @default(uuid())
+  username       String  @unique
+  email          String  @unique
+  hashedPassword String
+  emailVerified  Boolean @default(false)
+
+  userPage    UserPage?
+  userSession UserSession?
+
+  @@unique([username, email])
+}
+
+model UserSession {
+  sessionId String   @id @default(cuid())
+  userId    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId])
+}
+
+model UserPage {
+  id           String    @id @default(cuid())
+  username     String    @unique
+  pagePicUrl   String?
+  title        String
+  bio          String    
+  projects     Project[]
+  githubUrl    String?
+  instagramUrl String?
+  linkedinUrl  String?
+
+  experiences Experience[]
+
+  skills Skills[]
+
+  colorSchemeId Int
+
+  fontId     Int
+  fontWeight Int?
+  fontItalic Boolean @default(false)
+
+  colorScheme ColorScheme @relation(fields: [colorSchemeId], references: [id])
+  font        PageFont    @relation(fields: [fontId], references: [id])
+  User        User        @relation(fields: [username], references: [username], onDelete: Cascade)
+}
+
+model Skills {
+  id           String    @id @default(cuid())
+  userPageId   String
+  skillName    String
+  skillLevel   SkillLevel       @default(Beginner)
+}
+
+enum SkillLevel {
+  Beginner
+  Intermediate
+  Advanced
+}
+
+model ColorScheme {
+  id            Int     @id @default(sequence())
+  name          String  @unique
+  firstBgColor  String
+  secondBgColor String?
+  thirdBgColor  String?
+  fgColor       String
+
+  cardColor   String
+  cardFgColor String
+
+  buttonBgColor String
+  buttonFgColor String
+
+  UserPage UserPage[]
+}
+
+model PageFont {
+  id       Int        @id @default(sequence())
+  family   String
+  UserPage UserPage[]
+}
+
+// model ButtonStyle {
+//   id Int @id @default(autoincrement())
+//   radius Float
+
+// }
+
+model Project {
+  id           String @id @default(cuid())
+  userPageId   String
+  projectTitle String
+  projectDesc  String
+  projectUrl   String
+  
+
+  UserPage UserPage @relation(fields: [userPageId], references: [id], onDelete: Cascade)
+}
+
+model Experience {
+  id         String    @id @default(cuid())
+  userPageId String
+  jobTitle   String
+  jobDesc    String
+  jobOrg     String
+  startDate  DateTime
+  endDate    DateTime?
+
+  UserPage UserPage @relation(fields: [userPageId], references: [id], onDelete: Cascade)
+}
+
+model PasswordResetToken {
+  token     String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  userEmail String   @unique
+}
+
+model EmailVerificationToken {
+  token     String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+  userEmail String   @unique
+}
+
+model TwoFactorAuthToken {
+  id        String   @id @default(cuid())
+  pin       Int
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+  userEmail String   @unique
+}

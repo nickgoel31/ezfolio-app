@@ -1,0 +1,22 @@
+"use client"
+
+import { useEffect } from "react";
+
+const PreviewBox = ({username}:{username:string}) => {
+    const reloadIframe = () => {
+        useEffect(() => {
+            const iframe = document.getElementById('preview-iframe') as HTMLIFrameElement | null;
+            if (iframe) {
+              iframe.contentDocument?.location.reload(true);
+            }
+          }, []);
+      };
+  return (
+    <div>
+        <iframe id="preview-iframe" src={`https://www.ezfolio.social/${username}`} className='border-0 w-full h-full' name="myiFrame" scrolling="no"></iframe>
+        <button onClick={reloadIframe}>Reload iframe</button>
+    </div>
+  )
+}
+
+export default PreviewBox
