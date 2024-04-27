@@ -1,0 +1,140 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String       @id @default(uuid())
+  username       String       @unique
+  email          String       @unique
+  hashedPassword String
+  emailVerified  Boolean      @default(false)
+  userPage       UserPage?
+  userSession    UserSession?
+
+  @@unique([username, email])
+}
+
+model UserSession {
+  sessionId String   @id @default(cuid())
+  userId    String   @unique
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserPage {
+  id                       String                 @id @default(cuid())
+  username                 String                 @unique
+  pagePicUrl               String?
+  title                    String
+  bio                      String
+  githubUrl                String?
+  instagramUrl             String?
+  linkedinUrl              String?
+  skills                   String[]
+  colorSchemeId            Int
+  layoutId                 Int
+  fontId                   Int
+  fontWeight               Int?
+  fontItalic               Boolean                @default(false)
+  advancedPortfolioThemeId Int                    @default(1)
+  isAdvancedPortfolio      Boolean                @default(false)
+  tagline                  String?
+  pageLikes                Int                    @default(0)
+  pageViews                Int                    @default(0)
+  experiences              Experience[]
+  projects                 Project[]
+  advancedPortfolioTheme   AdvancedPortfolioTheme @relation(fields: [advancedPortfolioThemeId], references: [id])
+  colorScheme              ColorScheme            @relation(fields: [colorSchemeId], references: [id])
+  font                     PageFont               @relation(fields: [fontId], references: [id])
+  layout                   PageLayout             @relation(fields: [layoutId], references: [id])
+  User                     User                   @relation(fields: [username], references: [username], onDelete: Cascade)
+}
+
+model AdvancedPortfolioTheme {
+  id                          Int                         @id @default(autoincrement())
+  themeName                   String
+  currentAdvPortThemeColorId  Int
+  UserPage                    UserPage[]
+}
+
+model AdvancedPortfolioThemeColor {
+  id                       Int                      @id @default(autoincrement())
+  colorThemeName           String
+  primaryBgColor           String
+  primaryFgColor           String
+  secondaryBgColor         String
+  secondaryFgColor         String
+  accentColor              String
+}
+
+model ColorScheme {
+  id            Int        @id @default(autoincrement())
+  name          String     @unique
+  firstBgColor  String
+  secondBgColor String?
+  thirdBgColor  String?
+  fgColor       String
+  cardColor     String
+  cardFgColor   String
+  buttonBgColor String
+  buttonFgColor String
+  UserPage      UserPage[]
+}
+
+model PageLayout {
+  id         Int        @id @default(autoincrement())
+  layoutName String
+  UserPage   UserPage[]
+}
+
+model PageFont {
+  id       Int        @id @default(autoincrement())
+  family   String
+  UserPage UserPage[]
+}
+
+model Project {
+  id           String   @id @default(cuid())
+  userPageId   String
+  projectTitle String
+  projectDesc  String
+  projectUrl   String
+  UserPage     UserPage @relation(fields: [userPageId], references: [id], onDelete: Cascade)
+}
+
+model Experience {
+  id         String    @id @default(cuid())
+  userPageId String
+  jobTitle   String
+  jobDesc    String
+  jobOrg     String
+  startDate  DateTime
+  endDate    DateTime?
+  UserPage   UserPage  @relation(fields: [userPageId], references: [id], onDelete: Cascade)
+}
+
+model PasswordResetToken {
+  token     String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  userEmail String   @unique
+}
+
+model EmailVerificationToken {
+  token     String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+  userEmail String   @unique
+}
+
+model TwoFactorAuthToken {
+  id        String   @id @default(cuid())
+  pin       Int
+  createdAt DateTime @default(now())
+  expiresAt DateTime
+  userEmail String   @unique
+}
