@@ -30,13 +30,10 @@ const ShowcaseLayout = ({children}:{children:React.ReactNode}) => {
   return (
     <body className='h-full w-full relative overflow-x-hidden'>
       {/* <div className="fixed top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(100%_50%_at_50%_0%,#6D28D930_0,#6D28D910_50%,rgba(0,163,255,0)_100%)]"></div> */}
-        <div className='absolute top-0 left-0 w-full '>
-          <div className='Announcement Bar w-full p-2 bg-violet-500/10 border border-violet-800/50 font-medium flex items-center justify-center text-xs text-violet-200'>
-            We are aware of the issue where some of you are not receiving verification email! We are working on it. Thank you for your patience.
-          </div>
-          <div className='w-full h-[var(--navbar-height)] z-[10]'>
-              <Navbar />
-          </div>
+        <div>
+        <div className='absolute top-0 left-0 w-full h-[var(--navbar-height)] z-[10]'>
+            <Navbar />
+        </div>
         </div>
         <div ref={navbarRef} id='scroll-navbar' className='fixed bottom-4 z-[20] max-w-[420px] w-full bg-background/80 backdrop-blur-md rounded-full p-3 px-5 border border-foreground/10 opacity-0 left-1/2 -translate-x-1/2 translate-y-[100px]   delay-100 duration-700 ease-nav-in-out transition-scroll-nav'>
           <ScrollNavbar />
