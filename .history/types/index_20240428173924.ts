@@ -3,7 +3,7 @@ import { LucideIcon } from "lucide-react";
 export type ProjectStateType = {
     title:string,
     desc:string,
-    url:string,
+    projectUrl:string,
 }
 
 export type UserPageType = {
