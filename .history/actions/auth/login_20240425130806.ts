@@ -47,7 +47,7 @@ export const login = async (values: z.infer<typeof loginFormSchema>) => {
     if(!session) return;
 
     if(existingUser.emailVerified  === false) {
-        await sendEmailVerificationEmail(existingUser.email)
+        sendEmailVerificationEmail(existingUser.email)
         return {error: "Verify your email first! Email verification sent again"}
     }
 
