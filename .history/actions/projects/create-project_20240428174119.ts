@@ -12,8 +12,8 @@ export const createProjectInDB = async (userPageId:string, projects:ProjectState
                 data:{
                     userPageId,
                     projectTitle: projects[i].title,
-                    projectDesc: projects[i].desc,
-                    projectUrl: projects[i].url
+                    projectDesc: projects[i].projectDesc,
+                    projectUrl: projects[i].projectUrl
                 }
             })
         }
