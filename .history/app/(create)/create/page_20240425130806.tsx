@@ -17,7 +17,7 @@ const CreateUserPage = async () => {
   return (
     <div className='flex flex-col w-full h-full space-y-7 items-center justify-center'>
         <div className='space-y-2 text-center'>
-            <h1 className='font-bold text-4xl'>Create your&nbsp;{appName}&nbsp;page</h1>
+            <h1 className='font-bold text-4xl'>Create a&nbsp;{appName}&nbsp;page</h1>
             <p className=" text-muted-foreground font-medium">Lets create your profile page!</p>
         </div>
 
