@@ -97,7 +97,7 @@ model PageFont {
 }
 
 model Project {
-  id           String   @id @default(cuid()) @map("_id")
+  id           String   @id @map("_id")
   userPageId   String
   projectTitle String
   projectDesc  String
@@ -106,7 +106,7 @@ model Project {
 }
 
 model Experience {
-  id         String    @id @default(cuid()) @map("_id")
+  id         String    @id @map("_id")
   userPageId String
   jobTitle   String
   jobDesc    String
@@ -117,20 +117,20 @@ model Experience {
 }
 
 model PasswordResetToken {
-  token     String   @id @default(cuid()) @map("_id")
+  token     String   @id @default(cuid())
   createdAt DateTime @default(now())
   userEmail String   @unique
 }
 
 model EmailVerificationToken {
-  token     String   @id @default(cuid()) @map("_id")
+  token     String   @id @default(cuid())
   createdAt DateTime @default(now())
   expiresAt DateTime
   userEmail String   @unique
 }
 
 model TwoFactorAuthToken {
-  id        String   @id @default(cuid()) @map("_id")
+  id        String   @id @default(cuid())
   pin       Int
   createdAt DateTime @default(now())
   expiresAt DateTime

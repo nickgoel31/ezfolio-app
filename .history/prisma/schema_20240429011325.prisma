@@ -71,7 +71,7 @@ model AdvancedPortfolioTheme {
 }
 
 model ColorScheme {
-  id            Int        @id @map("_id")
+  id            Int        @id @map("id")
   name          String     @unique
   firstBgColor  String
   secondBgColor String?

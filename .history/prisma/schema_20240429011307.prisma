@@ -130,7 +130,7 @@ model EmailVerificationToken {
 }
 
 model TwoFactorAuthToken {
-  id        String   @id @default(cuid()) @map("_id")
+  id        String   @id @default(cuid())
   pin       Int
   createdAt DateTime @default(now())
   expiresAt DateTime

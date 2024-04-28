@@ -123,14 +123,14 @@ model PasswordResetToken {
 }
 
 model EmailVerificationToken {
-  token     String   @id @default(cuid()) @map("_id")
+  token     String   @id @default(cuid())
   createdAt DateTime @default(now())
   expiresAt DateTime
   userEmail String   @unique
 }
 
 model TwoFactorAuthToken {
-  id        String   @id @default(cuid()) @map("_id")
+  id        String   @id @default(cuid())
   pin       Int
   createdAt DateTime @default(now())
   expiresAt DateTime

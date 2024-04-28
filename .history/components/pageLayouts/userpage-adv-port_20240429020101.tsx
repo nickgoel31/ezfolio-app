@@ -105,7 +105,7 @@ export const UserpageAdvancedPortfolioPageModernTheme = ({userPage,title,bio,id,
               <div className='absolute bottom-[-90%] left-4 flex items-end'>
                 <p className='font-caveat font-semibold text-xl absolute translate-x-[100%] translate-y-[20%] md:translate-x-[-100%] md:translate-y-[10%]'>Linkedin</p>
                 {currentAdvancedPortfolioTheme.id === 2 && <Image src={"/arrow-black.png"} alt='arrow'  width={50} height={50} className='scale-x-[-1] md:scale-x-[1.01]'/>}
-                {currentAdvancedPortfolioTheme.id === 1 && <Image src={"/arrow-white.png"} alt='arrow'  width={50} height={50} className='scale-x-[-1] md:scale-x-[1.01]'/>}
+                {currentAdvancedPortfolioTheme.id === 3 && <Image src={"/arrow-white.png"} alt='arrow'  width={50} height={50} className='scale-x-[-1] md:scale-x-[1.01]'/>}
                 
               </div>
               <Link href={"#projects"}>

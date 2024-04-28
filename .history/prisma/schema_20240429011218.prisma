@@ -8,7 +8,7 @@ datasource db {
 }
 
 model User {
-  id             String  @id @default(uuid()) @map("_id")
+  id             String  @id @default(uuid()) @map("")
   username       String  @unique
   email          String  @unique
   hashedPassword String
@@ -22,14 +22,14 @@ model User {
 }
 
 model UserSession {
-  sessionId String   @id @default(cuid()) @map("_id")
+  sessionId String   @id @default(cuid())
   userId    String   @unique
   createdAt DateTime @default(now())
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model UserPage {
-  id                       String                 @id @default(cuid()) @map("_id")
+  id                       String                 @id @default(cuid())
   username                 String                 @unique
   pagePicUrl               String?
   title                    String
@@ -58,7 +58,7 @@ model UserPage {
 }
 
 model AdvancedPortfolioTheme {
-  id                  Int        @id @map("_id")
+  id                  Int        @id @default(autoincrement())
   themeName           String
   advPortThemeColorId Int
   thumbnailUrl        String?
@@ -71,7 +71,7 @@ model AdvancedPortfolioTheme {
 }
 
 model ColorScheme {
-  id            Int        @id @map("_id")
+  id            Int        @id @default(autoincrement())
   name          String     @unique
   firstBgColor  String
   secondBgColor String?
@@ -85,19 +85,19 @@ model ColorScheme {
 }
 
 model PageLayout {
-  id         Int        @id @map("_id")
+  id         Int        @id @default(autoincrement())
   layoutName String
   UserPage   UserPage[]
 }
 
 model PageFont {
-  id       Int        @id @map("_id")
+  id       Int        @id @default(autoincrement())
   family   String
   UserPage UserPage[]
 }
 
 model Project {
-  id           String   @id @default(cuid()) @map("_id")
+  id           String   @id @default(cuid())
   userPageId   String
   projectTitle String
   projectDesc  String
@@ -106,7 +106,7 @@ model Project {
 }
 
 model Experience {
-  id         String    @id @default(cuid()) @map("_id")
+  id         String    @id @default(cuid())
   userPageId String
   jobTitle   String
   jobDesc    String
@@ -117,20 +117,20 @@ model Experience {
 }
 
 model PasswordResetToken {
-  token     String   @id @default(cuid()) @map("_id")
+  token     String   @id @default(cuid())
   createdAt DateTime @default(now())
   userEmail String   @unique
 }
 
 model EmailVerificationToken {
-  token     String   @id @default(cuid()) @map("_id")
+  token     String   @id @default(cuid())
   createdAt DateTime @default(now())
   expiresAt DateTime
   userEmail String   @unique
 }
 
 model TwoFactorAuthToken {
-  id        String   @id @default(cuid()) @map("_id")
+  id        String   @id @default(cuid())
   pin       Int
   createdAt DateTime @default(now())
   expiresAt DateTime
