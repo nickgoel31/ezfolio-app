@@ -32,7 +32,7 @@ const ShowcaseLayout = ({children}:{children:React.ReactNode}) => {
       {/* <div className="fixed top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(100%_50%_at_50%_0%,#6D28D930_0,#6D28D910_50%,rgba(0,163,255,0)_100%)]"></div> */}
         <div className='absolute top-0 left-0 w-full '>
           <div className='Announcement Bar w-full h-14 px-4 lg:h-8 text-center bg-violet-500/10 border border-violet-800/50 font-medium flex items-center justify-center text-xs text-violet-950 dark:text-violet-200'>
-            Ezfolio is in open beta! Please report any bugs or issues you face.
+            Ezfolio is in open beta
           </div>
           <div className='w-full h-[var(--navbar-height)] z-[200] '>
               <Navbar />
