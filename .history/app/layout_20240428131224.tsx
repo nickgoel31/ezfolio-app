@@ -10,8 +10,6 @@ import { Toaster } from "@/components/ui/toaster";
 
 import {AnimatePresence} from "framer-motion"
 
-import 'react-loading-skeleton/dist/skeleton.css'
-
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -8,9 +8,7 @@ import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "@/app/api/uploadthing/core";
 import { Toaster } from "@/components/ui/toaster";
 
-import {AnimatePresence} from "framer-motion"
-
-import 'react-loading-skeleton/dist/skeleton.css'
+import {AnimatePresence, motion} from "framer-motion"
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -46,7 +44,13 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
         >
-          <div>{children}</div>
+          <AnimatePresence exitBeforeEnter>
+            <motion.div 
+              initial="initital">
+              {children}
+            </motion.div>
+          </AnimatePresence>
+          
           <Toaster />
         </ThemeProvider>
       </body>
