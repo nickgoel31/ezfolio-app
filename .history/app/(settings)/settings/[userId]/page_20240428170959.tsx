@@ -2,6 +2,7 @@ import { getUserById } from "@/helpers/get-user";
 import { redirect } from "next/navigation";
 import GeneralSettings from "../../_components/general";
 import SettingsSidebar from "../../_components/sidebar";
+import UserpageSettings from "../../_components/userpage";
 import { getUserpageByUserId } from "@/actions/userpage/get-userpage";
 import BillingSettings from "../../_components/billing";
 import DangerSettings from "../../_components/danger";
