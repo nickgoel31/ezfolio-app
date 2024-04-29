@@ -1,0 +1,40 @@
+"use client"
+
+import { Switch } from "@/components/ui/switch"
+import { useState } from "react"
+
+interface Props{
+    userPageId:string,
+    isCustomThemeEnabled: boolean,
+    
+}
+
+const CustomUserpageTheme = ({userPageId,isCustomThemeEnabled}:Props) => {
+    const [isCustomThemeEnabledState,setIsCustomThemeEnabledState] = useState(isCustomThemeEnabled)
+  return (
+    <div className='border shadow-sm rounded-xl p-5 bg-background w-full space-y-2'>
+        <div className='flex items-center w-full justify-between'>
+            <div className='flex items-center w-full gap-3'>
+                <h4 className='text-lg font-medium'>Custom Theme</h4>
+                <p className='bg-foreground text-background rounded-sm px-1 font-bold text-sm'>ALPHA</p>
+            </div>
+
+            <Switch checked={isCustomThemeEnabledState}/>
+        </div>
+
+        {!isCustomThemeEnabledState && <p className='text-xs font-medium text-yellow-500 pt-2'>
+            Custom theme feature is currently in closed beta. It will be available soon.
+        </p>}
+
+        <div className='flex flex-row flex-wrap w-full gap-4'>
+                {schemes.map((scheme) => (
+                    <div onClick={() => setColorSchemeState(scheme.id)} key={scheme.id} className={cn('w-28  h-28 rounded-xl flex items-center justify-center text-neutral-100 px-3 p-3 text-center cursor-pointer border',colorSchemeState === scheme.id && "outline outline-offset-2 outline-indigo-700")} style={{backgroundColor: `${scheme.firstBgColor}`, color:`${scheme.fgColor}`, background: `linear-gradient(45deg, ${scheme.firstBgColor} 0%, ${scheme.secondBgColor} 50%,${scheme.thirdBgColor} 100%)`}}>
+                    <h6 className='font-medium'>{scheme.name}</h6>
+                    </div>
+                ))}
+        </div>
+    </div>
+  )
+}
+
+export default CustomUserpageTheme
