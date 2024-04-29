@@ -3,7 +3,6 @@
 import { getCookieFromHeader } from "@/actions/auth/set-cookie";
 import { db } from "@/lib/db"
 import { getSessionBySessionId } from "./get-session";
-import { logout } from "@/actions/auth/logout";
 
 export const getUserByEmail = async (email:string) => {
     const user = await db.user.findUnique({
