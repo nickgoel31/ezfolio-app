@@ -54,7 +54,7 @@ const CodeEditor = () => {
                         <MenubarTrigger>Theme</MenubarTrigger>
                         <MenubarContent>
                             {themesList.map((theme) => (
-                                <MenubarItem key={theme.name} onClick={()=>setThemeState(theme.value)}>
+                                <MenubarItem key={theme.} onClick={()=>setThemeState(theme.value)}>
                                     {theme.name}
                                     {theme.value === themeState && <MenubarShortcut>Selected</MenubarShortcut>}
                                 </MenubarItem>
@@ -67,7 +67,7 @@ const CodeEditor = () => {
                         <MenubarTrigger>Font Size</MenubarTrigger>
                         <MenubarContent>
                             {fontSizeList.map((font) => (
-                                <MenubarItem key={font.name} onClick={()=>setFontSizeState(font.value)}>
+                                <MenubarItem onClick={()=>setFontSizeState(font.value)}>
                                     {font.name}
                                     {font.value === fontSizeState && <MenubarShortcut>Selected</MenubarShortcut>}
                                 </MenubarItem>

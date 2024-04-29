@@ -67,7 +67,7 @@ const CodeEditor = () => {
                         <MenubarTrigger>Font Size</MenubarTrigger>
                         <MenubarContent>
                             {fontSizeList.map((font) => (
-                                <MenubarItem key={font.name} onClick={()=>setFontSizeState(font.value)}>
+                                <MenubarItem key={font.} onClick={()=>setFontSizeState(font.value)}>
                                     {font.name}
                                     {font.value === fontSizeState && <MenubarShortcut>Selected</MenubarShortcut>}
                                 </MenubarItem>
