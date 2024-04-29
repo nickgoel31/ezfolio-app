@@ -15,7 +15,7 @@ const HelpCenter = () => {
             </p>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-screen-sm mx-auto  w-full gap-6 px-10 lg:px-0'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 max-w-screen-sm mx-auto  w-full gap-6 px-10 lg:px-0'>
             {helpLinks.map((h,index) => {
                 const Icon:LucideIcon | IconType = h.icon;
                 return(
