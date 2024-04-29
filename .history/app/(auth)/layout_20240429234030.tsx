@@ -10,8 +10,8 @@ const AuthLayout = ({children}:{children:React.ReactNode}) => {
 
       <div className="block dark:hidden absolute top-0 z-[-2] h-screen w-screen rotate-180 transform  bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,#7C3AED30_100%)]"></div>
 
-      <div className='px-6 h-full w-full flex items-center justify-center'>
-        {children}
+      <div>
+      {children}
       </div>
     </body>
   )
