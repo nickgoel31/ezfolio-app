@@ -28,16 +28,7 @@ const CustomUserpageTheme = ({userPageId,isCustomThemeEnabled}:Props) => {
             Custom theme feature is currently in closed beta. It will be available soon.
         </p>}
 
-        {isCustomThemeEnabledState && (
-            <div className='flex flex-col gap-2 pt-2'>
-            <h4 className="font-medium text-sm">
-                Theme Editor
-            </h4>
-            <Link href={`/custom-editor`}>
-                <Button variant={"outline"} size={"sm"}>Go to editor</Button>
-            </Link>
-        </div>
-        )}
+        {}
     </div>
   )
 }
