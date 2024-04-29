@@ -4,7 +4,6 @@ import { BackgroundBeams } from '@/components/bg-beams'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { motion } from "framer-motion";
-import Link from 'next/link';
 
 const HeroBanner = () => {
   return (
@@ -33,11 +32,7 @@ const HeroBanner = () => {
                   </Button>
                 </Link>
 
-                <Link href="register">
-                  <Button className='bg-gradient-to-r from-violet-500 to-indigo-500 text-white'>
-                      Showcase your Ezfolio
-                  </Button>
-                </Link>
+                <Link href=></Link>
             </div>
       </motion.div>
     </div>

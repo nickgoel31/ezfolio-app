@@ -4,7 +4,6 @@ import { BackgroundBeams } from '@/components/bg-beams'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { motion } from "framer-motion";
-import Link from 'next/link';
 
 const HeroBanner = () => {
   return (
@@ -27,17 +26,14 @@ const HeroBanner = () => {
             &nbsp;today</h1>
             <p className='text-muted-foreground font-medium'>Simplify your developer showcase. Create a clean, easy-to-navigate portfolio in minutes.</p>
             <div className='flex items-center gap-4 justify-center pt-3'>
-                <Link href="#features">
-                  <Button variant={"outline"}>
-                      Features
-                  </Button>
-                </Link>
+                <Link>
+                <Button variant={"outline"}>
+                    Features
+                </Button></Link>
 
-                <Link href="register">
-                  <Button className='bg-gradient-to-r from-violet-500 to-indigo-500 text-white'>
-                      Showcase your Ezfolio
-                  </Button>
-                </Link>
+                <Button className='bg-gradient-to-r from-violet-500 to-indigo-500 text-white'>
+                    Showcase your Ezfolio
+                </Button>
             </div>
       </motion.div>
     </div>

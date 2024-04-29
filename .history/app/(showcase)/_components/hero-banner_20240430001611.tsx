@@ -4,7 +4,6 @@ import { BackgroundBeams } from '@/components/bg-beams'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { motion } from "framer-motion";
-import Link from 'next/link';
 
 const HeroBanner = () => {
   return (
