@@ -15,7 +15,7 @@ const QuickActionSection = ({projects}:{projects:Project[]}) => {
     <div className='py-2 space-y-3'>
         <h3 className='font-semibold'>Manage Projects</h3>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4'>
             {projects.slice(0,3).map((project) => (
                 <div key={project.id} className='border shadow-sm rounded-xl space-y-5 p-4 bg-background justify-between flex flex-col'>
                     <div className='space-y-1'>

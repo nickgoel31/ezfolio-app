@@ -50,7 +50,7 @@ const DashboardLayout = async ({params, children}:{children:React.ReactNode, par
         <div className='pl-0  lg:pb-0 pb-14 min-h-screen  w-full relative'>
           <div className="hidden dark:block fixed top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#2E106540,rgba(255,255,255,0))]"></div>
           <div className="block dark:hidden fixed top-0 z-[-2] h-screen w-screen bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#C084FC40,rgba(255,255,255,0))]"></div>
-          <div className='py-6 lg:py-14 pl-9 pr-9 lg:pl-12 w-full max-w-screen-lg ml-0 lg:ml-[17vw]'>
+          <div className='py-6 lg:py-14 pl-9 lg:pl-12 w-full max-w-screen-lg ml-0 lg:ml-[17vw]'>
             {children}
           </div>
         </div>

@@ -15,11 +15,11 @@ const HelpCenter = () => {
             </p>
         </div>
 
-        <div className='flex flex-col md:flex-row md:flex-wrap lg:flex lg:flex-wrap items-center justify-center max-w-screen-lg mx-auto  w-full gap-6 px-4 lg:px-0 '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-wrap items-center justify-center max-w-screen-lg mx-auto  w-full gap-6 px-4 lg:px-0 bg-red-500'>
             {helpLinks.map((h,index) => {
                 const Icon:LucideIcon | IconType = h.icon;
                 return(
-                    <div key={index} className='h-[260px] p-[1px] w-full max-w-[350px] relative rounded-xl  group'>
+                    <div key={index} className='h-[260px] p-[1px] w-[350px] relative rounded-xl  group'>
                         {/* BORDER */}
                         <div className='absolute top-0 left-0 w-full h-full rounded-xl bg-[#e5e5e5] dark:bg-[#131313] overflow-hidden z-[-1]'>
                             <div className='group-hover:opacity-100 opacity-0 help-center-card-border absolute w-[200%] h-[200%] bg-gradient-to-tr from-transparent via-transparent to-foreground/40 dark:to-foreground/30 top-[-50%] left-[-50%] transition-scroll-nav '>
