@@ -1,0 +1,5 @@
+const commonSkills = [
+    "JS",
+    "React",
+    
+]

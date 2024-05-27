@@ -1,0 +1,22 @@
+import { getAllUserPage } from '@/helpers/get-user'
+import React from 'react'
+
+const EzConnectDevs = async () => {
+
+    const userPages = await getAllUserPage()
+    if(!userPages){
+        return <div>Loading...</div>
+    }
+
+  return (
+    <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+        {userPages.map((user,index) => (
+            <div key={index} className='w-full bg-foreground/[0.02] rounded-lg border border-foreground/5 '>
+                {user.title}
+            </div>
+        ))}
+    </div>
+  )
+}
+
+export default EzConnectDevs
