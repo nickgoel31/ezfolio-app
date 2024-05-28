@@ -109,7 +109,7 @@ const EzConnectDevsList = ({userPages}:{userPages:UserPage[]}) => {
     }
 
     
-    if (skillQuery && userPages.filter(up => up.skills.includes(skillQuery || "")).length === 0) {
+    if (skillQuery && userPages.filter(up => up.skills.).length === 0) {
         return (
             <div className='w-full col-span-3'>
                 <p className='text-muted-foreground font-medium text-center'>
