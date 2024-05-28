@@ -24,10 +24,6 @@ const EzConnectDevsList = ({userPages}:{userPages:UserPage[]}) => {
 
     const searchParams = useSearchParams()
     let skillQuery = searchParams.get('srskque')
-
-    if(skillQuery === null){
-        skillQuery = "";
-    }
     
 
     if(!skillQuery || skillQuery === null) {
@@ -127,7 +123,7 @@ const EzConnectDevsList = ({userPages}:{userPages:UserPage[]}) => {
 
   return (
     <>
-    {userPages.filter(up => up.skills.includes(skillQuery)).slice(0,20).map((user,index) => {
+    {skillQuery !== null && userPages.filter(up => up.skills.includes(skillQuery)).slice(0,20).map((user,index) => {
             return (
                 <div key={index} className='w-full bg-foreground/[0.02] relative overflow-hidden rounded-lg border border-foreground/5 h-96 p-4 py-6 gap-3 flex flex-col items-center'>
                     <Avatar className='h-16 w-16'>

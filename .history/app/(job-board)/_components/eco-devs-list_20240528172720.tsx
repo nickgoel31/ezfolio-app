@@ -23,12 +23,7 @@ import { useSearchParams } from 'next/navigation'
 const EzConnectDevsList = ({userPages}:{userPages:UserPage[]}) => {
 
     const searchParams = useSearchParams()
-    let skillQuery = searchParams.get('srskque')
-
-    if(skillQuery === null){
-        skillQuery = "";
-    }
-    
+    const skillQuery = searchParams.get('srskque')
 
     if(!skillQuery || skillQuery === null) {
         return (
