@@ -29,7 +29,7 @@ const EzConnectDevsList = ({userPages}:{userPages:UserPage[]}) => {
         return (
             <div className='w-full col-span-3'>
                 <p className='text-muted-foreground font-medium text-center'>
-                    No developers found with the skill &quot;{skillQuery}&quot;
+                    No developers found with the skill "{skillQuery}&
                 </p>
             </div>
         )
