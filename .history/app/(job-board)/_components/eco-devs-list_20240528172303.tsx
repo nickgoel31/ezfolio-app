@@ -109,15 +109,15 @@ const EzConnectDevsList = ({userPages}:{userPages:UserPage[]}) => {
     }
 
     
-    if (skillQuery && userPages.filter(up => up.skills.includes(skillQuery)).length === 0) {
-        return (
-            <div className='w-full col-span-3'>
-                <p className='text-muted-foreground font-medium text-center'>
-                    No developers found with the skill &quot;{skillQuery}&quot;
-                </p>
-            </div>
-        )
-    }
+        if(skillQuery === String && userPages.filter(up => up.skills.includes(skillQuery)).length === 0){
+            return (
+                <div className='w-full col-span-3'>
+                    <p className='text-muted-foreground font-medium text-center'>
+                        No developers found with the skill &quot;{skillQuery}&quot;
+                    </p>
+                </div>
+            )
+        }
 
 
   return (
