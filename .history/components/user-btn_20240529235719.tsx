@@ -3,7 +3,7 @@
 import React from 'react'
 import { Avatar, AvatarFallback } from './ui/avatar'
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
-import { BugIcon, CoffeeIcon, LogOut, MoreVertical, Settings2, Share2, Users, Wrench } from 'lucide-react'
+import { BugIcon, CoffeeIcon, LogOut, MoreVertical, Settings2, Share2, Wrench } from 'lucide-react'
 import { logout } from '@/actions/auth/logout'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
@@ -49,10 +49,7 @@ const UserButton = ({username,isAdmin}:{username:string,isAdmin?:boolean}) => {
                         <p>Account Settings</p>
                     </Link> */}
 
-<Link href={`/connect`} className='flex items-center gap-3 w-full text-sm font-medium rounded hover:bg-foreground/5 p-2'>
-                            <Users size={18}/>
-                            <p>EzConnect</p>
-                        </Link>
+                    
                     
                     <div onClick={handleSignout} className='flex items-center gap-2 text-sm font-medium w-full p-2 hover:bg-foreground/10 rounded transition cursor-pointer text-red-500'>
                         <LogOut size={18}/>

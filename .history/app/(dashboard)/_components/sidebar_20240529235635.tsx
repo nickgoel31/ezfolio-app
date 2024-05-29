@@ -139,7 +139,7 @@ export const NewSidebar = ({userId,username,isAdmin}:{userId:string,username:str
                         </Link> */}
                         <Link href={`/connect`} className='flex items-center gap-3 w-full text-sm font-medium rounded hover:bg-foreground/5 p-2'>
                             <Users size={18}/>
-                            <p>EzConnect</p>
+                            <p>Settings</p>
                         </Link>
 
                         <Link href={`/settings/${userId}`} className='flex items-center gap-3 w-full text-sm font-medium rounded hover:bg-foreground/5 p-2'>

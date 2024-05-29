@@ -100,7 +100,7 @@ export const navItems = [
         href:'/s#pricing'
     },
     {
-        label: 'Connect',
+        label: 'Ez',
         href:'/connect'
     },
     // {

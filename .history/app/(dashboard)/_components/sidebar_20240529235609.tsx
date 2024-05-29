@@ -3,7 +3,7 @@
 import Logo from '@/components/logo'
 import UserButton from '@/components/user-btn'
 import { navigationItems } from '@/data'
-import { AlignLeft, BugIcon, ExternalLink, Eye, Settings2, Shapes, Users } from 'lucide-react'
+import { AlignLeft, BugIcon, ExternalLink, Eye, Settings2, Shapes } from 'lucide-react'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { NavItem, UpdatedNavItems } from './nav-item'
@@ -137,11 +137,6 @@ export const NewSidebar = ({userId,username,isAdmin}:{userId:string,username:str
                             <CoffeeIcon size={17}/>
                             <p>Buy me a coffee</p>
                         </Link> */}
-                        <Link href={`/connect`} className='flex items-center gap-3 w-full text-sm font-medium rounded hover:bg-foreground/5 p-2'>
-                            <Users size={18}/>
-                            <p>EzConnect</p>
-                        </Link>
-
                         <Link href={`/settings/${userId}`} className='flex items-center gap-3 w-full text-sm font-medium rounded hover:bg-foreground/5 p-2'>
                             <Settings2 size={18}/>
                             <p>Settings</p>

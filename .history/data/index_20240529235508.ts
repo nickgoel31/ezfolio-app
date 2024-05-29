@@ -100,8 +100,8 @@ export const navItems = [
         href:'/s#pricing'
     },
     {
-        label: 'Connect',
-        href:'/connect'
+        label: 'Pricing',
+        href:'/s#pricing'
     },
     // {
     //     label: 'Community',

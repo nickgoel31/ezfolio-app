@@ -138,7 +138,7 @@ const colorSchemesNew = [
 ];
 
 async function main() {
-  for (const colorScheme of colorSchemesNew) {
+  for (const colorScheme of colorSchemes) {
     await db.colorScheme.create({
       data: {
         id: colorScheme.id,

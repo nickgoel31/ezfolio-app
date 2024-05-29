@@ -3,7 +3,7 @@
 import React from 'react'
 import { Avatar, AvatarFallback } from './ui/avatar'
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
-import { BugIcon, CoffeeIcon, LogOut, MoreVertical, Settings2, Share2, Users, Wrench } from 'lucide-react'
+import { BugIcon, CoffeeIcon, LogOut, MoreVertical, Settings2, Share2, Wrench } from 'lucide-react'
 import { logout } from '@/actions/auth/logout'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
