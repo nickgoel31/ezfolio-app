@@ -315,7 +315,7 @@ const OnBoardingAI = ({username,schemes,layouts,fonts}:{username:string,schemes:
 
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 p-3 px-4 border rounded cursor-pointer hover:bg-foreground/60 transition font-medium text-sm flex items-center gap-4 bg-foreground/[0.9] text-background justify-between overflow-hidden transition-ez hover:text-foreground group" onClick={onSubmit}>
                     <span className='absolute w-full h-full z-[-1] bg-gradient-to-tr from-violet-500 to-fuchsia-500 left-0 group-hover:translate-x-0 group-hover:translate-y-0 transition-ez opacity-0 group-hover:opacity-100 blur-md'></span>
-                    <h5 className="font-medium text-sm flex gap-2 items-center ">Let&apos;s Experience ezfolio together! <Rocket /></h5>
+                    <h5 className="font-medium text-sm flex gap-2 items-center ">Let's Experience ezfolio together! <Rocket /></h5>
                 </div>    
         </div>}
 

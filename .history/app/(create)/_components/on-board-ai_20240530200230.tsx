@@ -191,7 +191,7 @@ const OnBoardingAI = ({username,schemes,layouts,fonts}:{username:string,schemes:
         </div>}
 
         {currentSection === 2 && <div className='Message 1 leading-normal text-center font-poppins animate-fade-in'>
-            <h1 className='font-semibold text-5xl leading-normal'>Let&apos;s set up your page</h1>
+            <h1 className='font-semibold text-5xl leading-normal'>Let's set up your page</h1>
             
         </div>}
 
@@ -209,7 +209,7 @@ const OnBoardingAI = ({username,schemes,layouts,fonts}:{username:string,schemes:
         </div>}
 
         {currentSection === 4 && <div className='Message 1 leading-normal text-center font-poppins animate-fade-in'>
-            <h1 className='font-semibold text-5xl leading-normal'>Now, let&apos;s write your bio</h1>
+            <h1 className='font-semibold text-5xl leading-normal'>Now, let's write your bio</h1>
 
             <div>
                 <Textarea ref={bioRef} className='mt-8 bg-foreground/[0.05] max-h-64 h-48' placeholder='Write about what you like, occupation, anything catchy...' />
@@ -228,7 +228,7 @@ const OnBoardingAI = ({username,schemes,layouts,fonts}:{username:string,schemes:
         </div>}
 
         {currentSection === 5 && <div className='Message 1 leading-normal text-center font-poppins animate-fade-in w-full'>
-            <h1 className='font-semibold text-3xl leading-normal'>Any projects that you&apos;d like<br />to add in your portfolio?</h1>
+            <h1 className='font-semibold text-3xl leading-normal'>Any projects that you'd like<br />to add in your portfolio?</h1>
             
             <div className='mt-6 w-full'>
             <div className="flex flex-col w-full items-center justify-center gap-3">
@@ -280,7 +280,7 @@ const OnBoardingAI = ({username,schemes,layouts,fonts}:{username:string,schemes:
                             </Dialog>
 
                             {projects.length >= 1 && <div className=" p-3 px-4 border rounded cursor-pointer hover:bg-foreground/60 transition font-medium text-sm flex items-center gap-4 bg-foreground/[0.9] text-background justify-between" onClick={section5Submit}>
-                                <h5 className="font-medium text-sm">That&apos;s it!</h5>
+                                <h5 className="font-medium text-sm">That's it!</h5>
                             </div>}
 
                             {projects.length === 0 && <div className=" p-3 px-4 border rounded cursor-pointer hover:bg-foreground/10 transition font-medium text-sm flex items-center gap-4 bg-foreground/[0.05] justify-between" onClick={section5Submit}>
@@ -315,7 +315,7 @@ const OnBoardingAI = ({username,schemes,layouts,fonts}:{username:string,schemes:
 
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 p-3 px-4 border rounded cursor-pointer hover:bg-foreground/60 transition font-medium text-sm flex items-center gap-4 bg-foreground/[0.9] text-background justify-between overflow-hidden transition-ez hover:text-foreground group" onClick={onSubmit}>
                     <span className='absolute w-full h-full z-[-1] bg-gradient-to-tr from-violet-500 to-fuchsia-500 left-0 group-hover:translate-x-0 group-hover:translate-y-0 transition-ez opacity-0 group-hover:opacity-100 blur-md'></span>
-                    <h5 className="font-medium text-sm flex gap-2 items-center ">Let&apos;s Experience ezfolio together! <Rocket /></h5>
+                    <h5 className="font-medium text-sm flex gap-2 items-center ">Let's Experience ezfolio together! <Rocket /></h5>
                 </div>    
         </div>}
 
