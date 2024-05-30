@@ -88,7 +88,7 @@ const OnBoardingForm = ({username}:{username:string}) => {
      
       // 2. Define a submit handler.
       function onSubmit(values: z.infer<typeof onBoardingSchema>) {
-        createUserPageInDB(values,projects,username,imageUrl)
+        // createUserPageInDB(values,projects,username,imageUrl)
         router.push("/d/redirect")
       }
 
