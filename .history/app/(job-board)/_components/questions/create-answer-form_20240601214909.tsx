@@ -4,6 +4,11 @@ import Tiptap from '@/components/tiptap'
 import { useEditor } from '@tiptap/react'
 import React, { useState } from 'react'
 
+import { Editor } from '@tiptap/core'
+import Document from '@tiptap/extension-document'
+import Paragraph from '@tiptap/extension-paragraph'
+import Text from '@tiptap/extension-text'
+
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -20,7 +25,8 @@ import {
 } from "@/components/ui/form"
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { answerSchema, questionPostSchema } from '@/form-schemas'
-
+import { createQuestionPostInDB } from '@/actions/question-post/create'
+import { redirect } from 'next/navigation'
 import { createAnswerForQuestionPostInDB } from '@/actions/question-post/answer/create'
 
 const CreateNewAnswer = ({questionPostId}:{questionPostId:string}) => {
