@@ -72,7 +72,7 @@ const AITest = () => {
               <div className='text-center'>
                 <h1 className='font-semibold text-6xl leading-normal font-poppins text-center'>Hi, I&apos;m <span className='bg-gradient-to-tr from-teal-200 via-indigo-200 to-rose-200 bg-clip-text text-transparent'>EzBuddy</span></h1>
                 <p className='font-medium text-sm text-muted-foreground'>
-                  I&apos;m a chatbot powered by <span className='bg-gradient-to-tr from-teal-200 via-indigo-200 to-rose-200 bg-clip-text text-transparent'>Google&apos;s Gemini AI</span>. Ask me anything!
+                  I'm a chatbot powered by <span className='bg-gradient-to-tr from-teal-200 via-indigo-200 to-rose-200 bg-clip-text text-transparent'>Google's Gemini AI</span>. Ask me anything!
                 </p>
               </div>
             </div>

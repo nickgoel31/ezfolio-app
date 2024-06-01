@@ -41,14 +41,14 @@ const EditorToolbar = ({editor}:{editor:Editor | null}) => {
     
         // empty
         if (url === '') {
-          editor?.chain().focus().extendMarkRange('link').unsetLink()
+          editor.chain().focus().extendMarkRange('link').unsetLink()
             .run()
     
           return
         }
     
         // update link
-        editor?.chain().focus().extendMarkRange('link').toggleLink({ href: url })
+        editor.chain().focus().extendMarkRange('link').toggleLink({ href: url })
           .run()
       }, [editor])
 

@@ -31,7 +31,7 @@ import {
 const EditorToolbar = ({editor}:{editor:Editor | null}) => {
 
     const setLink = useCallback(() => {
-        const previousUrl = editor?.getAttributes('link').href
+        const previousUrl = editor.getAttributes('link').href
         const url = window.prompt('URL', previousUrl)
     
         // cancelled
@@ -41,20 +41,16 @@ const EditorToolbar = ({editor}:{editor:Editor | null}) => {
     
         // empty
         if (url === '') {
-          editor?.chain().focus().extendMarkRange('link').unsetLink()
+          editor.chain().focus().extendMarkRange('link').unsetLink()
             .run()
     
           return
         }
     
         // update link
-        editor?.chain().focus().extendMarkRange('link').toggleLink({ href: url })
+        editor.chain().focus().extendMarkRange('link').toggleLink({ href: url })
           .run()
       }, [editor])
-
-      if(!editor){
-        return null
-    }
   return (
     <ContextMenuContent>
           
