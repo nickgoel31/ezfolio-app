@@ -3,10 +3,6 @@
 import {GoogleGenerativeAI} from '@google/generative-ai'
 import fs from "fs"
 
-const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY || "AIzaSyDsragVq1oL9YKfScf7WdfPmQ7BgfxSECI"
-
-const genAI = new GoogleGenerativeAI(googleAPIKey)
-
 function fileToGenerativePart(path:string, mimeType:string) {
     return {
       inlineData: {
@@ -17,6 +13,13 @@ function fileToGenerativePart(path:string, mimeType:string) {
   }
 
 export const googleGeminiGenerativeAi = async (questionTitle:string, questionDesc:string) => {
+
+  const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY
+if(!googleAPIKey){
+  return {error:"No"}
+}
+
+const genAI = new GoogleGenerativeAI(googleAPIKey)
 
     const generationConfig = {
         temperature: 0.2,
@@ -53,6 +56,13 @@ export const googleGeminiGenerativeAi = async (questionTitle:string, questionDes
 
 export const googleGeminiGenerativeAiImage = async () => {
 
+  const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY
+if(!googleAPIKey){
+  return {error:"No"}
+}
+
+const genAI = new GoogleGenerativeAI(googleAPIKey)
+
     const model = genAI.getGenerativeModel({
         model: "gemini-pro-vision"
     })
@@ -70,17 +80,6 @@ export const googleGeminiGenerativeAiImage = async () => {
     return text;
 }
 
-export const googleGeminiGenerativeAiEmbedding = async () => {
-
-    // For embeddings, use the embedding-001 model
-  const model = genAI.getGenerativeModel({ model: "embedding-001"});
-
-  const text = "The quick brown fox jumps over the lazy dog."
-
-  const result = await model.embedContent(text);
-  const embedding = result.embedding;
-  return embedding
-}
 
 
 interface HistoryMessage {
@@ -89,6 +88,14 @@ interface HistoryMessage {
   }
 
 export const googleGeminiGenerativeAiChat = async (prompt:string, historyMessages:HistoryMessage[]) => {
+
+  const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY
+if(!googleAPIKey){
+  console.log("google API KEY NOT FOUND")
+  return {error:"google API KEY NOT FOUND"}
+}
+
+const genAI = new GoogleGenerativeAI(googleAPIKey)
 
     const chatHistory = historyMessages.map(msg => ({
         role: msg.role,

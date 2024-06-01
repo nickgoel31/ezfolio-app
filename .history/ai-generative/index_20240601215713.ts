@@ -3,10 +3,6 @@
 import {GoogleGenerativeAI} from '@google/generative-ai'
 import fs from "fs"
 
-const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY || "AIzaSyDsragVq1oL9YKfScf7WdfPmQ7BgfxSECI"
-
-const genAI = new GoogleGenerativeAI(googleAPIKey)
-
 function fileToGenerativePart(path:string, mimeType:string) {
     return {
       inlineData: {
@@ -17,6 +13,13 @@ function fileToGenerativePart(path:string, mimeType:string) {
   }
 
 export const googleGeminiGenerativeAi = async (questionTitle:string, questionDesc:string) => {
+
+  const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY
+if(!googleAPIKey){
+  return {error:"No"}
+}
+
+const genAI = new GoogleGenerativeAI(googleAPIKey)
 
     const generationConfig = {
         temperature: 0.2,

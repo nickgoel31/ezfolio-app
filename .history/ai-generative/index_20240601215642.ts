@@ -3,7 +3,10 @@
 import {GoogleGenerativeAI} from '@google/generative-ai'
 import fs from "fs"
 
-const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY || "AIzaSyDsragVq1oL9YKfScf7WdfPmQ7BgfxSECI"
+const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY
+if(!googleAPIKey){
+  return {error:""}
+}
 
 const genAI = new GoogleGenerativeAI(googleAPIKey)
 

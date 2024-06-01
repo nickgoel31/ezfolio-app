@@ -3,9 +3,6 @@
 import {GoogleGenerativeAI} from '@google/generative-ai'
 import fs from "fs"
 
-const googleAPIKey = process.env.GOOGLE_GENERATIVE_API_KEY || "AIzaSyDsragVq1oL9YKfScf7WdfPmQ7BgfxSECI"
-
-const genAI = new GoogleGenerativeAI(googleAPIKey)
 
 function fileToGenerativePart(path:string, mimeType:string) {
     return {
