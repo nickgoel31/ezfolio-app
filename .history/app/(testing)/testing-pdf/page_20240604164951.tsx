@@ -8,6 +8,7 @@ import { useCurrentUserpage } from '@/hooks/useUserpageByUserId';
 
 
 const PdfTesting = () => {
+  const userPage = useProjectsAndExperiences()
   return (
     <Link href={"/testing-pdf/test"}>
       Generate Pdf
