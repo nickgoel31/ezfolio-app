@@ -3,9 +3,9 @@ import { Page, Text, View, Document, StyleSheet, Font, Image, Svg, Link } from '
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useUserpageByUserId } from '@/hooks/useUserpageByUserId';
 import { Award, Education, Experience, Project, UserPage } from '@prisma/client';
-import { EducationResume, ExperienceResume, SkillResume, UserPageType } from '@/types';
+import { UserPageType } from '@/types';
 import { z } from 'zod';
-
+import { ExperienceResume, SkillResume } from '@/app/(resume-generator)/resume-generator/_components/nsiu-resume-form';
 
 Font.register({
     family: 'Oswald',
@@ -287,7 +287,7 @@ export const MyDocument = ({userPage, experiences, projects,awards,education}:{u
   })
 
 
-export const MyDocumentUNSI = ({values,profilePicUrl,skills, experiences,education}:{values: z.infer<typeof resumeSchema>,profilePicUrl:string,skills: SkillResume[], experiences:ExperienceResume[], education:EducationResume[]}) => (
+export const MyDocumentUNSI = ({values,profilePicUrl,skills, experiences,education}:{values: z.infer<typeof resumeSchema>,profilePicUrl:string,skills: SkillResume[], experiences:ExperienceResume[], <education:EducationResume></education:EducationResume>[]}) => (
 <Document creator='Ezfolio' producer='Ezfolio' title={`${values.name}'s Resume`} subject={`Created with Ezfolio`}>
     <Page size="A4" style={styles.page} wrap={false}>
       <View style={styles.flexDiv}>

@@ -3,9 +3,8 @@ import { Page, Text, View, Document, StyleSheet, Font, Image, Svg, Link } from '
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { useUserpageByUserId } from '@/hooks/useUserpageByUserId';
 import { Award, Education, Experience, Project, UserPage } from '@prisma/client';
-import { EducationResume, ExperienceResume, SkillResume, UserPageType } from '@/types';
+import { UserPageType } from '@/types';
 import { z } from 'zod';
-
 
 Font.register({
     family: 'Oswald',

@@ -60,6 +60,26 @@ export type NavItemType = {
     href: string;
 }
 
+export type ExperienceResume = {
+    jobTitle: string;
+    company: string;
+    description: string;
+    startDate: Date | null;
+    endDate: Date | null; 
+}
+
+export type EducationResume = {
+    degree: string;
+    institution: string;
+    major: string;
+    startDate: Date | null;
+    endDate: Date | null; 
+}
+
+export type SkillResume = {
+    name: string;
+}
+
 
 export type RouteHandlerConfig = {
     /**

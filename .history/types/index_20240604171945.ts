@@ -2,8 +2,8 @@ import { LucideIcon } from "lucide-react";
 
 export type ProjectStateType = {
     title:string,
-    projectDesc:string,
-    projectUrl:string,
+    desc:string,
+    url:string,
 }
 
 export type UserPageType = {
@@ -58,6 +58,26 @@ export type NavItemType = {
     preview:boolean,
     pathname: string,
     href: string;
+}
+
+export type ExperienceResume = {
+    jobTitle: string;
+    company: string;
+    description: string;
+    startDate: Date | null;
+    endDate: Date | null; 
+}
+
+export type EducationResume = {
+    degree: string;
+    institution: string;
+    major: string;
+    startDate: Date | null;
+    endDate: Date | null; 
+}
+
+export type SkillResume = {
+    name: string;
 }
 
 

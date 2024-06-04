@@ -30,7 +30,7 @@ import SkillAddBtn from './skills-add-btn'
 import { PDFDownloadLink } from '@react-pdf/renderer'
 import { MyDocumentUNSI } from '@/app/(testing)/testing-pdf/_components/pdf-doc'
 import { resumeTemplates } from '@/data'
-import { EducationResume, ExperienceResume, SkillResume } from "@/types"
+import { EducationResume, ExperienceResume } from "@/types"
 
 const resumeSchema = z.object({
     name: z.string().min(2, {

@@ -30,7 +30,6 @@ import SkillAddBtn from './skills-add-btn'
 import { PDFDownloadLink } from '@react-pdf/renderer'
 import { MyDocumentUNSI } from '@/app/(testing)/testing-pdf/_components/pdf-doc'
 import { resumeTemplates } from '@/data'
-import { EducationResume, ExperienceResume, SkillResume } from "@/types"
 
 const resumeSchema = z.object({
     name: z.string().min(2, {
@@ -44,7 +43,25 @@ const resumeSchema = z.object({
       }),
   })
 
+export type ExperienceResume = {
+    jobTitle: string;
+    company: string;
+    description: string;
+    startDate: Date | null;
+    endDate: Date | null; 
+}
 
+export type EducationResume = {
+    degree: string;
+    institution: string;
+    major: string;
+    startDate: Date | null;
+    endDate: Date | null; 
+}
+
+export type SkillResume = {
+    name: string;
+}
 
 const ResumeGeneratorFormNSIU = () => {
     const [selectedTemplate, setSelectedTemplate] = useState<number>(1)
