@@ -17,7 +17,6 @@ import {
 import { Button } from "@/components/ui/button"
 
 import { Input } from '@/components/ui/input'
-import { SkillResume } from '@/types'
 
 const SkillAddBtn = ({onSkillAdd}:{onSkillAdd: (skill:SkillResume) => void}) => {
     const [name, setName] = useState("")

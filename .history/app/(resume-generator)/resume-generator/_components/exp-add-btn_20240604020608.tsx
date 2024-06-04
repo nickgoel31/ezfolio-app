@@ -19,8 +19,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import DatePicker from "react-datepicker";
 import { Experience } from '@prisma/client';
-import { ExperienceResume } from '@/types';
-
+import { ExperienceResume } from './nsiu-resume-form';
 
 const ExpAddBtn = ({onExperienceAdd}:{onExperienceAdd: (experience:ExperienceResume) => void}) => {
 

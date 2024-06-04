@@ -11,8 +11,7 @@ import { Textarea } from '@/components/ui/textarea'
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { EducationResume } from '@/types'
-
+import { EducationResume } from './nsiu-resume-form'
 
 const EduAddBtn = ({onEducationAdd}:{onEducationAdd: (education:EducationResume) => void}) => {
 

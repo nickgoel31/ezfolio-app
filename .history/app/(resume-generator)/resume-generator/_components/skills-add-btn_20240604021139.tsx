@@ -17,7 +17,7 @@ import {
 import { Button } from "@/components/ui/button"
 
 import { Input } from '@/components/ui/input'
-import { SkillResume } from '@/types'
+import { SkillResume } from './nsiu-resume-form'
 
 const SkillAddBtn = ({onSkillAdd}:{onSkillAdd: (skill:SkillResume) => void}) => {
     const [name, setName] = useState("")
