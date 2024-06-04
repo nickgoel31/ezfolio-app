@@ -123,7 +123,7 @@ export const featuresList = [
     },
 ]
 
-export const resumeTemplates = [
+export const templates = [
     {
         id:1,
         name: 'Classic Purple',
