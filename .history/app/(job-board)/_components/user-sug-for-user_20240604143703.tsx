@@ -1,0 +1,15 @@
+import React from 'react'
+
+const UserSuggestionsForUser = () => {
+  return (
+    <div className='w-full justify-between items-start relative'>
+        <h4 className='font-semibold text-lg'>Suggested</h4>
+
+        <div>
+            
+        </div>
+    </div>
+  )
+}
+
+export default UserSuggestionsForUser

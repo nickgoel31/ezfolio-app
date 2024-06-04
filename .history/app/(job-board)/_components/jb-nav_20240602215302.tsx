@@ -1,0 +1,64 @@
+"use client"
+
+import Logo2 from '@/components/logo2'
+import { navItems } from '@/data'
+import Link from 'next/link'
+import React from 'react'
+import { FaDiscord, FaGithub } from 'react-icons/fa'
+import { useCurrentUser } from '@/hooks/useCurrentUser'
+import ThemeToggle from '@/app/(showcase)/_components/theme-toggle'
+import { Search, SearchCode } from 'lucide-react'
+import { Input } from '@/components/ui/input'
+
+const Navbar = () => {
+    const user = useCurrentUser()
+  return (
+    <div className='w-full h-full flex items-center justify-center'>
+        <div className=' p-3 w-full max-w-screen-lg flex items-center justify-between px-6'>
+            <div className='flex items-center gap-9'>
+                <div className='logo'>
+                    <Link href={"/connect"} className='font-semibold flex gap-2 items-center'>
+                        <SearchCode />
+                        EzConnect
+                    </Link>
+                </div>
+            </div>
+
+            
+
+            <div className='flex items-center gap-6'>    
+                {/* <Link href={process.env.DISCORD_INVITE_LINK || ""} target='_blank'>
+                    <FaDiscord className='cursor-pointer opacity-60 hover:opacity-100 transition-scroll-nav'/>
+                </Link>    */}
+
+                {/* <Link href={"https://www.github.com/nickgoel31"} target='_blank'>
+                    <FaGithub className='cursor-pointer opacity-60 hover:opacity-100 transition hover:-translate-y-1'/>
+                </Link> */}
+
+                {/* <div className='rounded-full  relative overflow-hidden'>
+                    <div className='absolute right-3 top-1/2 -translate-y-1/2 z-[1] bg-background h-full flex items-center justify-center'>
+                        <Search size={17}/>
+                    </div>
+                    <Input placeholder='Search user id, skills etc.' className='rounded-full'/>
+                </div> */}
+                <nav className=''>
+                    <ul className='flex items-center gap-6'>
+                        <Link  href={"/connect/discover"} className='text-sm font-medium hover:text-primary/60 transition-all'>
+                            Discover
+                        </Link>
+                        <Link  href={"/connect/questions"} className='text-sm font-medium hover:text-primary/60 transition-all'>
+                            Questions
+                        </Link>
+                    </ul>
+                </nav>
+
+                <ThemeToggle />  
+
+                <GetStartedBtnNavbar />
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default Navbar
