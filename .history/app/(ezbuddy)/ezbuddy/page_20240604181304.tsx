@@ -76,7 +76,7 @@ const EzBuddyChatBot = () => {
     };
 
     fetchAIResponse()
-    // fetchHtmlMessages();
+    fetchHtmlMessages();
   }, [isLoading, messages, setMessages])
 
   return (

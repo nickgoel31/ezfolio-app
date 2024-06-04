@@ -31,12 +31,6 @@ const EzBuddyChatBot = () => {
   const [messages, setMessages] = useState<HistoryMessage[]>([])
   const [htmlMessages, setHtmlMessages] = useState<HistoryMessage[]>([]);
 
-  let combinedMessages:HistoryMessage[] = [];
-  for (let i = 0; i < Math.max(messages.length, htmlMessages.length); i++) {
-    if (messages[i]) combinedMessages.push(messages[i]);
-    if (htmlMessages[i]) combinedMessages.push(htmlMessages[i]);
-  }
-
   const handleClick = (e: React.FormEvent) => {
     e.preventDefault();
     // Step 1: Update state with user's message instantly
@@ -55,13 +49,10 @@ const EzBuddyChatBot = () => {
       if (isLoading ) {
         const userMessage = messages[messages.length - 1].message
         const msg = await googleGeminiGenerativeAiChat(userMessage, messages)
-
-        const htmlMsg = await marked(msg);
         
         // Step 3: Update state with AI's response
         setAiResponse(msg)
-        setHtmlMessages(prev => [...prev, { role: "model", message: htmlMsg }])
-        // setMessages(prev => [...prev, { role: "model", message: msg }])
+        setMessages(prev => [...prev, { role: "model", message: msg }])
         setIsLoading(false)
       }
     }
@@ -76,7 +67,7 @@ const EzBuddyChatBot = () => {
     };
 
     fetchAIResponse()
-    // fetchHtmlMessages();
+    fetchHtmlMessages();
   }, [isLoading, messages, setMessages])
 
   return (
@@ -154,7 +145,7 @@ const EzBuddyChatBot = () => {
       )}
 
       <div className='space-y-4 max-w-screen-sm mx-auto py-10'>
-        {combinedMessages.map((msg, index) => 
+        {htmlMessages.map((msg, index) => 
            {
             return (
               (

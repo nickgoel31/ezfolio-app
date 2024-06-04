@@ -34,8 +34,6 @@ import { updateQuestionPostInDB } from '@/actions/question-post/update'
 import { updateAnswerInDB } from '@/actions/question-post/answer/update'
 import AnswerDeleteButton from '@/app/(job-board)/_components/questions/ans-del-btn'
 import TurndownService from 'turndown'
-import { marked } from 'marked'
-import { useMarked } from '@/hooks/useMarked'
 
 const turndownService = new TurndownService();
 
@@ -419,6 +417,7 @@ export const TiptapAnswerAutomaticEzBuddyReadOnly = ({answer}:{answer:string}) =
 }
 
 export const TiptapEzBuddyMessages = ({answer}:{answer:string}) => {
+  const htmlMsg = await marked(answer);
   const editor = useEditor({
       extensions: [
         StarterKit.configure(),
@@ -492,7 +491,7 @@ export const TiptapEzBuddyMessages = ({answer}:{answer:string}) => {
           },
         }).configure({ levels: [1, 2,3,4] }),
       ],
-      content: answer,
+      content: htmlMsg,
       autofocus: false,
       editable: false,
       editorProps:{

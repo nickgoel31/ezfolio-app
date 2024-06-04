@@ -56,12 +56,12 @@ const EzBuddyChatBot = () => {
         const userMessage = messages[messages.length - 1].message
         const msg = await googleGeminiGenerativeAiChat(userMessage, messages)
 
-        const htmlMsg = await marked(msg);
+        
         
         // Step 3: Update state with AI's response
         setAiResponse(msg)
-        setHtmlMessages(prev => [...prev, { role: "model", message: htmlMsg }])
-        // setMessages(prev => [...prev, { role: "model", message: msg }])
+        setHtmlMessages(prev => [...prev, { role: "model", message: msg }])
+        setMessages(prev => [...prev, { role: "model", message: msg }])
         setIsLoading(false)
       }
     }
@@ -76,7 +76,7 @@ const EzBuddyChatBot = () => {
     };
 
     fetchAIResponse()
-    // fetchHtmlMessages();
+    fetchHtmlMessages();
   }, [isLoading, messages, setMessages])
 
   return (

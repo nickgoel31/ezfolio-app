@@ -34,8 +34,6 @@ import { updateQuestionPostInDB } from '@/actions/question-post/update'
 import { updateAnswerInDB } from '@/actions/question-post/answer/update'
 import AnswerDeleteButton from '@/app/(job-board)/_components/questions/ans-del-btn'
 import TurndownService from 'turndown'
-import { marked } from 'marked'
-import { useMarked } from '@/hooks/useMarked'
 
 const turndownService = new TurndownService();
 
@@ -327,6 +325,7 @@ export const TiptapAnswerReadOnly = ({description,isPostCreator,answerId,answerU
 }
 
 export const TiptapAnswerAutomaticEzBuddyReadOnly = ({answer}:{answer:string}) => {
+    const savedQuesDesc = turndownService.turndown(editor?.getHTML() || "")
     const editor = useEditor({
         extensions: [
           StarterKit.configure(),
@@ -416,97 +415,5 @@ export const TiptapAnswerAutomaticEzBuddyReadOnly = ({answer}:{answer:string}) =
         {<EditorContent editor={editor} />}
     </div>
   )
-}
-
-export const TiptapEzBuddyMessages = ({answer}:{answer:string}) => {
-  const editor = useEditor({
-      extensions: [
-        StarterKit.configure(),
-        Underline.configure({
-          HTMLAttributes: {
-            class: 'my-custom-class',
-          },
-        }),
-        Link.configure({
-          HTMLAttributes: {
-            class: 'text-blue-500 underline font-medium underline-offset-2',
-          },
-          validate: href => /^https?:\/\//.test(href),
-        }),
-        CodeBlockLowlight.configure({
-          HTMLAttributes: {
-            class: 'p-1 px-2 rounded-md bg-foreground/[0.1]',
-          },
-          languageClassPrefix: 'language-',
-          exitOnTripleEnter: false,
-          exitOnArrowDown: false,
-          lowlight
-  
-        }),
-        Blockquote.configure({
-          HTMLAttributes: {
-            class: 'relative italic before:bg-violet-600 before:absolute before:w-1 before:h-full before:left-0 px-4',
-          },
-        }),
-        TextAlign.configure({
-          types: ['heading', 'paragraph'],
-        }),
-        OrderedList.configure({
-          keepMarks: true,
-          keepAttributes:true,
-          itemTypeName: 'listItem',
-          HTMLAttributes:{
-            class:"list-decimal px-5"
-          }
-        }),
-        BulletList.configure({
-          itemTypeName: 'listItem',
-          keepMarks: true,
-          keepAttributes:true,
-          HTMLAttributes:{
-            class:"list-disc px-5"
-          }
-        }),
-        Highlight.configure({
-          multicolor: true,
-        }),
-        Heading.extend({
-          levels: [1, 2,3,4],
-          renderHTML({ node, HTMLAttributes }) {
-            const level = this.options.levels.includes(node.attrs.level)
-              ? node.attrs.level
-              : this.options.levels[0];
-            const classes: { [index: number]: string } = {
-              1: 'text-4xl font-bold',
-              2: 'text-3xl font-semibold',
-              3: 'text-2xl font-semibold',
-              4: 'text-xl font-medium',
-            };
-            return [
-              `h${level}`,
-              mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, {
-                class: `${classes[level]}`,
-              }),
-              0,
-            ];
-          },
-        }).configure({ levels: [1, 2,3,4] }),
-      ],
-      content: answer,
-      autofocus: false,
-      editable: false,
-      editorProps:{
-        attributes:{
-          class:"bg-foreground/[0.01] rounded-md p-3"
-        }
-      },
-    })
-
-  
-return (
-  <div className='relative w-full'>
-      {<EditorContent editor={editor} />}
-  </div>
-)
 }
 

@@ -419,6 +419,7 @@ export const TiptapAnswerAutomaticEzBuddyReadOnly = ({answer}:{answer:string}) =
 }
 
 export const TiptapEzBuddyMessages = ({answer}:{answer:string}) => {
+  const htmlMsg = useMarked(answer)
   const editor = useEditor({
       extensions: [
         StarterKit.configure(),
@@ -492,7 +493,7 @@ export const TiptapEzBuddyMessages = ({answer}:{answer:string}) => {
           },
         }).configure({ levels: [1, 2,3,4] }),
       ],
-      content: answer,
+      content: htmlMsg,
       autofocus: false,
       editable: false,
       editorProps:{

@@ -34,8 +34,6 @@ import { updateQuestionPostInDB } from '@/actions/question-post/update'
 import { updateAnswerInDB } from '@/actions/question-post/answer/update'
 import AnswerDeleteButton from '@/app/(job-board)/_components/questions/ans-del-btn'
 import TurndownService from 'turndown'
-import { marked } from 'marked'
-import { useMarked } from '@/hooks/useMarked'
 
 const turndownService = new TurndownService();
 

@@ -492,7 +492,7 @@ export const TiptapEzBuddyMessages = ({answer}:{answer:string}) => {
           },
         }).configure({ levels: [1, 2,3,4] }),
       ],
-      content: answer,
+      content: htmlMsg,
       autofocus: false,
       editable: false,
       editorProps:{
