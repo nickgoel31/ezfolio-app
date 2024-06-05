@@ -197,16 +197,7 @@ const config = {
             "0%,70%,100%": { opacity: "1" },
             "20%,50%": { opacity: "0" },
           },
-          "animate-pulse":{
-            
-              "0%, 100% ":{
-                opacity: "1"
-              },
-              "50%": {
-                opacity: ".5"
-              }
-            
-          }
+          ""
         }
       },
       animation: {
@@ -220,7 +211,6 @@ const config = {
         "changing-color-light": "changingColorLight 4s linear infinite",
         "revolutionize-card": "revolutionizeCard 4s cubic-bezier(.69,-0.11,.51,1.18) 1",
         "feature-showcase":"featureShowcase 10s linear infinite",
-        "pulse": "animate-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         aurora: "aurora 60s linear infinite",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
       },

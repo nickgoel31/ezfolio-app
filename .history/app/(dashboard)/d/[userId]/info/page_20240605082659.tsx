@@ -46,7 +46,7 @@ const UserPageDashboardInfo = async ({params}:{params:{userId:string}}) => {
         </div>
 
         <div className='space-y-6'>
-            <BasicInfo username={user.username} pageTitle={userpage.title} pageBio={userpage.bio} pagePicUrl={userpage.pagePicUrl}/>
+            }
             <ProjectsInfo projects={projects} userPageId={userpage.id}/>
             <ExperiencesInfo exps={experiences} userPageId={userpage.id}/>
             <SkillsInfo skills={skills} userPageId={userpage.id}/>

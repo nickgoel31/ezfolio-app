@@ -2,7 +2,7 @@ import { getUserpageByUserId } from '@/actions/userpage/get-userpage'
 import { getProjectByUserPageId } from '@/helpers/get-project'
 import { getCurrentUser, getUserById } from '@/helpers/get-user'
 import { redirect } from 'next/navigation'
-import React from 'react'
+import React, { Suspense } from 'react'
 import BasicInfo from '../../../_components/basic-info'
 import ProjectsInfo from '../../../_components/projects-info'
 import ExperiencesInfo from '../../../_components/experiences-info'
@@ -46,11 +46,25 @@ const UserPageDashboardInfo = async ({params}:{params:{userId:string}}) => {
         </div>
 
         <div className='space-y-6'>
-            <BasicInfo username={user.username} pageTitle={userpage.title} pageBio={userpage.bio} pagePicUrl={userpage.pagePicUrl}/>
-            <ProjectsInfo projects={projects} userPageId={userpage.id}/>
-            <ExperiencesInfo exps={experiences} userPageId={userpage.id}/>
-            <SkillsInfo skills={skills} userPageId={userpage.id}/>
-            <SocialsInfo userPage={userpage}/>
+            <Suspense fallback={<}>
+                <BasicInfo username={user.username} pageTitle={userpage.title} pageBio={userpage.bio} pagePicUrl={userpage.pagePicUrl}/>
+            </Suspense>
+
+            <Suspense fallback={"Loading"}>
+                <ProjectsInfo projects={projects} userPageId={userpage.id}/>
+            </Suspense>
+
+            <Suspense fallback={"Loading"}>
+                <ExperiencesInfo exps={experiences} userPageId={userpage.id}/>
+            </Suspense>
+
+            <Suspense fallback={"Loading"}>
+                <SkillsInfo skills={skills} userPageId={userpage.id}/>
+            </Suspense>
+
+            <Suspense fallback={"Loading"}>
+                <SocialsInfo userPage={userpage}/>
+            </Suspense>
         </div>
     </div>
   )

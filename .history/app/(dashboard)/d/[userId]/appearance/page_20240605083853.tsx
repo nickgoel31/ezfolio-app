@@ -80,9 +80,7 @@ const AppearancePage = async ({params}:{params:{userId:string}}) => {
               <ModernPortfolioToggle userPageId={userPage.id} advancedPortfolioThemes={advancedPortfolioThemes} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled} currentAdvancedPortfolioTheme={currentAdvancedPortfolioTheme} tagline={userPage.tagline} />
             </Suspense>
 
-            <Suspense fallback={<SkeletonSection />}>
-              <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
-            </Suspense>
+            <Suspense fallback={<SkeletonSection />}></Suspense>
 
             
 

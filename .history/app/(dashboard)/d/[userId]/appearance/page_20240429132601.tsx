@@ -2,7 +2,7 @@ import { getAllColorSchemes, getColorSchemeOfUserPage } from '@/actions/colorsch
 import { getAllFonts, getFontOfUserPage } from '@/actions/font/get-font';
 import { getCurrentUser, getUserById } from '@/helpers/get-user';
 import { redirect } from 'next/navigation';
-import React, { Suspense } from 'react'
+import React from 'react'
 import { getUserpageByUserId } from '@/actions/userpage/get-userpage';
 import ThemeSelect from '@/app/(dashboard)/_components/appearance/theme-select';
 import FontSelect from '@/app/(dashboard)/_components/appearance/font-select';
@@ -13,7 +13,6 @@ import ModernPortfolioToggle from '@/app/(dashboard)/_components/appearance/mode
 import { getAdvancedPortfolioThemeOfUserPage, getAllAdvancedPortfolioThemes,  } from '@/actions/adv-port/get-adv-port';
 import CustomUserpageTheme from '@/app/(dashboard)/_components/appearance/custom-userpage';
 import { getCustomUserpageTheme } from '@/actions/custom-theme/get-theme';
-import SkeletonSection from '@/app/(dashboard)/_components/skeleton-section';
 
 const AppearancePage = async ({params}:{params:{userId:string}}) => {
 
@@ -64,31 +63,13 @@ const AppearancePage = async ({params}:{params:{userId:string}}) => {
                 </p>
             </div>
 
-            <Suspense fallback={<SkeletonSection />}>
-              <ThemeSelect schemes={schemes} currentScheme={currentColorScheme} userPageId={userPage.id} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled}/>
-            </Suspense>
+            <ThemeSelect schemes={schemes} currentScheme={currentColorScheme} userPageId={userPage.id} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled}/>
+            <FontSelect fonts={fonts} currentFont={currentFont} userPageId={userPage.id} fontWeight={userPage.fontWeight} />
+            <LayoutSelect layouts={layouts} currentLayout={currentLayout} userPageId={userPage.id}/>
 
-            <Suspense fallback={<SkeletonSection />}>
-              <FontSelect fonts={fonts} currentFont={currentFont} userPageId={userPage.id} fontWeight={userPage.fontWeight} />
-            </Suspense>
+            <ModernPortfolioToggle userPageId={userPage.id} advancedPortfolioThemes={advancedPortfolioThemes} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled} currentAdvancedPortfolioTheme={currentAdvancedPortfolioTheme} tagline={userPage.tagline} />
 
-            <Suspense fallback={<SkeletonSection />}>
-              <LayoutSelect layouts={layouts} currentLayout={currentLayout} userPageId={userPage.id}/>
-            </Suspense>
-
-            <Suspense fallback={<SkeletonSection />}>
-              <ModernPortfolioToggle userPageId={userPage.id} advancedPortfolioThemes={advancedPortfolioThemes} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled} currentAdvancedPortfolioTheme={currentAdvancedPortfolioTheme} tagline={userPage.tagline} />
-            </Suspense>
-
-            <Suspense fallback={<SkeletonSection />}>
-              <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
-            </Suspense>
-
-            
-
-            
-
-            
+            <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
 
             <p className='text-center font-medium text-lg text-muted-foreground pt-4'>More customizations coming soon!</p>
           </div>

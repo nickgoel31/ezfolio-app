@@ -68,27 +68,17 @@ const AppearancePage = async ({params}:{params:{userId:string}}) => {
               <ThemeSelect schemes={schemes} currentScheme={currentColorScheme} userPageId={userPage.id} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled}/>
             </Suspense>
 
-            <Suspense fallback={<SkeletonSection />}>
-              <FontSelect fonts={fonts} currentFont={currentFont} userPageId={userPage.id} fontWeight={userPage.fontWeight} />
-            </Suspense>
+            <Suspense fallback={<SkeletonSection />}></Suspense>
+            <Suspense fallback={<SkeletonSection />}></Suspense>
+            <Suspense fallback={<SkeletonSection />}></Suspense>
+            <Suspense fallback={<SkeletonSection />}></Suspense>
 
-            <Suspense fallback={<SkeletonSection />}>
-              <LayoutSelect layouts={layouts} currentLayout={currentLayout} userPageId={userPage.id}/>
-            </Suspense>
+            <FontSelect fonts={fonts} currentFont={currentFont} userPageId={userPage.id} fontWeight={userPage.fontWeight} />
+            <LayoutSelect layouts={layouts} currentLayout={currentLayout} userPageId={userPage.id}/>
 
-            <Suspense fallback={<SkeletonSection />}>
-              <ModernPortfolioToggle userPageId={userPage.id} advancedPortfolioThemes={advancedPortfolioThemes} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled} currentAdvancedPortfolioTheme={currentAdvancedPortfolioTheme} tagline={userPage.tagline} />
-            </Suspense>
+            <ModernPortfolioToggle userPageId={userPage.id} advancedPortfolioThemes={advancedPortfolioThemes} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled} currentAdvancedPortfolioTheme={currentAdvancedPortfolioTheme} tagline={userPage.tagline} />
 
-            <Suspense fallback={<SkeletonSection />}>
-              <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
-            </Suspense>
-
-            
-
-            
-
-            
+            <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
 
             <p className='text-center font-medium text-lg text-muted-foreground pt-4'>More customizations coming soon!</p>
           </div>

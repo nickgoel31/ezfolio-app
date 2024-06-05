@@ -81,7 +81,7 @@ const AppearancePage = async ({params}:{params:{userId:string}}) => {
             </Suspense>
 
             <Suspense fallback={<SkeletonSection />}>
-              <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
+            <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
             </Suspense>
 
             

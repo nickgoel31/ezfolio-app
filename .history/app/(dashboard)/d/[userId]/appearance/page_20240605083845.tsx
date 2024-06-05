@@ -76,19 +76,15 @@ const AppearancePage = async ({params}:{params:{userId:string}}) => {
               <LayoutSelect layouts={layouts} currentLayout={currentLayout} userPageId={userPage.id}/>
             </Suspense>
 
-            <Suspense fallback={<SkeletonSection />}>
-              <ModernPortfolioToggle userPageId={userPage.id} advancedPortfolioThemes={advancedPortfolioThemes} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled} currentAdvancedPortfolioTheme={currentAdvancedPortfolioTheme} tagline={userPage.tagline} />
-            </Suspense>
+            <Suspense fallback={<SkeletonSection />}></Suspense>
 
-            <Suspense fallback={<SkeletonSection />}>
-              <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
-            </Suspense>
+            <Suspense fallback={<SkeletonSection />}></Suspense>
 
             
 
-            
+            <ModernPortfolioToggle userPageId={userPage.id} advancedPortfolioThemes={advancedPortfolioThemes} isAdvancedPortfolioToggled={isAdvancedPortfolioToggled} currentAdvancedPortfolioTheme={currentAdvancedPortfolioTheme} tagline={userPage.tagline} />
 
-            
+            <CustomUserpageTheme userPageId={userPage.id} isCustomThemeEnabled={isCustomThemeEnabled}/>
 
             <p className='text-center font-medium text-lg text-muted-foreground pt-4'>More customizations coming soon!</p>
           </div>
