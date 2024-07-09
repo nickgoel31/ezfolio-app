@@ -4,7 +4,6 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Navbar from './_components/navbar'
 import Footer from './_components/footer'
 import ScrollNavbar from './_components/scroll-navbar'
-import MobileNavbar from './_components/mob-nav'
 
 
 const ShowcaseLayout = ({children}:{children:React.ReactNode}) => {
@@ -35,12 +34,8 @@ const ShowcaseLayout = ({children}:{children:React.ReactNode}) => {
           <div className='Announcement Bar w-full h-14 px-4 lg:h-8 text-center bg-violet-500/10 border border-violet-800/50 font-medium flex items-center justify-center text-xs text-violet-950 dark:text-violet-200'>
             Ezfolio is in open beta! Please report any bugs or issues you face.
           </div>
-          <div className='hidden lg:block w-full h-[var(--navbar-height)] z-[200] '>
+          <div className='sm:hidden lg:block w-full h-[var(--navbar-height)] z-[200] '>
               <Navbar />
-          </div>
-          <div className='block lg:hidden w-full h-[var(--navbar-height)] z-[200] '>
-              {/* Hello */}
-              <MobileNavbar />
           </div>
         </div>
         <div ref={navbarRef} id='scroll-navbar' className='fixed bottom-4 z-[20]  max-w-[420px] w-[95%] bg-background/80 backdrop-blur-md rounded-full p-3 px-5 border border-foreground/10 opacity-0 left-1/2 -translate-x-1/2 translate-y-[100px]   delay-100 duration-700 ease-nav-in-out transition-scroll-nav'>

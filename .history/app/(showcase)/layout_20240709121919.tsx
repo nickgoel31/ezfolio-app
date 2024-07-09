@@ -4,7 +4,6 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Navbar from './_components/navbar'
 import Footer from './_components/footer'
 import ScrollNavbar from './_components/scroll-navbar'
-import MobileNavbar from './_components/mob-nav'
 
 
 const ShowcaseLayout = ({children}:{children:React.ReactNode}) => {

@@ -4,7 +4,6 @@ import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import Navbar from './_components/navbar'
 import Footer from './_components/footer'
 import ScrollNavbar from './_components/scroll-navbar'
-import MobileNavbar from './_components/mob-nav'
 
 
 const ShowcaseLayout = ({children}:{children:React.ReactNode}) => {
@@ -40,7 +39,7 @@ const ShowcaseLayout = ({children}:{children:React.ReactNode}) => {
           </div>
           <div className='block lg:hidden w-full h-[var(--navbar-height)] z-[200] '>
               {/* Hello */}
-              <MobileNavbar />
+              <MobileNavbar >
           </div>
         </div>
         <div ref={navbarRef} id='scroll-navbar' className='fixed bottom-4 z-[20]  max-w-[420px] w-[95%] bg-background/80 backdrop-blur-md rounded-full p-3 px-5 border border-foreground/10 opacity-0 left-1/2 -translate-x-1/2 translate-y-[100px]   delay-100 duration-700 ease-nav-in-out transition-scroll-nav'>
