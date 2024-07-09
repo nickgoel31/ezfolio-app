@@ -6,7 +6,7 @@ export const getValidSubdomain = (host?: string | null) => {
     }
     if (host && host.includes('.')) {
       const candidate = host.split('.')[0];
-      if (candidate && !candidate.includes('localhost') && !candidate.includes('ezfolio')) {
+      if (candidate && !candidate.includes('localhost') && !candidate.includes('localhost')) {
         // Valid candidate
         subdomain = candidate;
       }
